@@ -3,203 +3,500 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>সপ্তপদী (Saptapadi.bd) - বিশ্বস্ত ম্যাট্রিমনি ও ওয়েডিং ডিরেক্টরি</title>
+    <title>সপ্তপদী (Saptapadi.bd) - আপনার পছন্দের, আপনার সময়ে</title>
     <style>
         :root {
-            --primary-color: #722F37;
-            --secondary-color: #D4AF37;
-            --bg-color: #F9F6F0;
-            --card-bg: #FFFFFF;
+            --primary: #722F37;
+            --secondary: #D4AF37;
+            --accent: #E91E63;
+            --bg: #FAF8F5;
+            --text: #2C2C2C;
         }
-        body { font-family: 'Segoe UI', Arial, sans-serif; background-color: var(--bg-color); color: #333; margin: 0; padding: 0; }
-        header { background: linear-gradient(135deg, var(--primary-color), #4A151B); color: var(--secondary-color); text-align: center; padding: 20px 10px; border-bottom: 4px solid var(--secondary-color); }
-        header h1 { margin: 0; font-size: 26px; }
-        header p { margin: 5px 0 0; color: #fff; font-size: 13px; }
-        .container { max-width: 900px; margin: 15px auto; padding: 10px; }
-        .card { background: var(--card-bg); border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.08); padding: 15px; margin-bottom: 15px; border-top: 4px solid var(--secondary-color); }
-        .card h3 { color: var(--primary-color); margin-top: 0; border-bottom: 2px solid var(--bg-color); padding-bottom: 5px; }
-        .bkash-box { background: #FDF2F4; border: 1px dashed var(--primary-color); padding: 12px; border-radius: 8px; font-size: 14px; margin-top: 10px; }
-        .filter-box { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 15px; }
-        .filter-box select, .filter-box input { padding: 9px; border-radius: 5px; border: 1px solid #ccc; flex: 1; min-width: 140px; font-size: 14px; }
-        .biodata-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 15px; }
-        .biodata-card { background: #fff; border: 1px solid #e0e0e0; border-radius: 8px; padding: 12px; position: relative; }
-        .biodata-card h4 { margin: 0 0 5px; color: var(--primary-color); }
-        .biodata-card p { margin: 4px 0; font-size: 13px; color: #555; }
-        .blur-info { filter: blur(5px); user-select: none; color: #888; background: #eee; padding: 2px 5px; border-radius: 4px; }
-        .unlocked-info { filter: none !important; background: #e8f5e9 !important; color: #2e7d32 !important; font-weight: bold; }
-        .btn { background-color: var(--secondary-color); color: #000; font-weight: bold; border: none; padding: 8px 12px; border-radius: 5px; cursor: pointer; text-decoration: none; display: inline-block; margin-top: 8px; font-size: 13px; }
-        .btn:hover { opacity: 0.9; }
-        .whatsapp-btn { background-color: #25D366; color: #FFF; }
-        .directory-item { background: #fdfdfd; border-left: 4px solid var(--secondary-color); padding: 8px 12px; margin-bottom: 8px; border-radius: 4px; }
-        footer { text-align: center; padding: 15px; background: #333; color: #FFF; font-size: 12px; margin-top: 20px; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            padding: 0;
+        }
+        /* Top Navigation */
+        nav {
+            background: #fff;
+            padding: 12px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .logo-icon {
+            background: var(--primary);
+            color: var(--secondary);
+            width: 38px;
+            height: 38px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        .logo-text h2 { margin: 0; font-size: 20px; color: var(--primary); }
+        .logo-text p { margin: 0; font-size: 11px; color: #666; }
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .bkash-badge {
+            background: #FDF2F4;
+            color: #E91E63;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: bold;
+            border: 1px solid #f8bbd0;
+            text-decoration: none;
+        }
+
+        /* Hero Banner */
+        .hero {
+            background: linear-gradient(rgba(114, 47, 55, 0.85), rgba(74, 21, 27, 0.9)), url('https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=1000&q=80');
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            text-align: center;
+            padding: 40px 20px;
+        }
+        .hero h1 { font-size: 28px; margin-bottom: 10px; color: #fff; }
+        .hero p { font-size: 14px; opacity: 0.9; margin-bottom: 0; }
+
+        /* Multi-step Container */
+        .container {
+            max-width: 700px;
+            margin: -25px auto 40px auto;
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+            padding: 25px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .step-indicator {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 25px;
+            font-size: 13px;
+            color: #888;
+            font-weight: 600;
+        }
+        .step-indicator span.active {
+            color: var(--primary);
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 3px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 20px;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        /* Selection Cards (Juti Style) */
+        .options-grid {
+            display: grid;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+        .option-card {
+            background: #fff;
+            border: 2px solid #eee;
+            border-radius: 12px;
+            padding: 16px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .option-card:hover, .option-card.selected {
+            border-color: var(--primary);
+            background: #FFFDF9;
+        }
+        .option-card h3 { margin: 0; font-size: 16px; color: var(--primary); }
+        .option-card p { margin: 3px 0 0; font-size: 12px; color: #666; }
+        .option-card span { font-size: 18px; color: var(--primary); }
+
+        /* Buttons */
+        .btn-main {
+            background-color: var(--primary);
+            color: #fff;
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 15px;
+            transition: 0.2s;
+        }
+        .btn-main:hover { opacity: 0.92; }
+        .back-btn {
+            background: transparent;
+            border: none;
+            color: #666;
+            cursor: pointer;
+            font-size: 14px;
+            margin-bottom: 15px;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* Profile Cards & Blur Effect */
+        .profile-card {
+            background: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+            position: relative;
+        }
+        .profile-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .profile-header h4 { margin: 0; color: var(--primary); font-size: 16px; }
+        .blur-info {
+            filter: blur(6px);
+            user-select: none;
+            background: #f0f0f0;
+            padding: 2px 6px;
+            border-radius: 4px;
+            color: #888;
+        }
+        .unlocked {
+            filter: none !important;
+            background: #E8F5E9 !important;
+            color: #2E7D32 !important;
+            font-weight: bold;
+        }
+        .unlock-btn {
+            background: var(--secondary);
+            color: #000;
+            font-weight: bold;
+            border: none;
+            padding: 8px 14px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 13px;
+            margin-top: 10px;
+        }
+
+        /* Modal Overlay */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.6);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            padding: 15px;
+        }
+        .modal-content {
+            background: #fff;
+            width: 100%;
+            max-width: 420px;
+            border-radius: 16px;
+            padding: 25px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            position: relative;
+            animation: fadeIn 0.3s ease;
+        }
+        .close-modal {
+            position: absolute;
+            top: 15px; right: 15px;
+            background: none; border: none;
+            font-size: 20px; cursor: pointer; color: #666;
+        }
+        .modal-content h3 { color: var(--primary); margin-top: 0; text-align: center; }
+        .price-box {
+            background: #FFF8E7;
+            border: 1px dashed var(--secondary);
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 13px;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        .input-group { margin-bottom: 15px; }
+        .input-group label { display: block; font-size: 13px; margin-bottom: 5px; font-weight: 600; }
+        .input-group input, .input-group select {
+            width: 100%; padding: 10px;
+            border: 1px solid #ccc; border-radius: 8px;
+            font-size: 14px; box-sizing: border-box;
+        }
+        .whatsapp-link-btn {
+            background: #25D366; color: #fff; text-align: center;
+            display: block; padding: 12px; border-radius: 8px;
+            text-decoration: none; font-weight: bold; margin-top: 10px;
+        }
+
+        footer { text-align: center; padding: 20px; color: #777; font-size: 12px; }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>🌹 সপ্তপদী (Saptapadi.bd) 🌹</h1>
-        <p>বাংলাদেশের সবচেয়ে বিশ্বস্ত ম্যাট্রিমনি ও ওয়েডিং ডিরেক্টরি</p>
-    </header>
+    <!-- Top Navigation -->
+    <nav>
+        <div class="logo-area">
+            <div class="logo-icon">স</div>
+            <div class="logo-text">
+                <h2>সপ্তপদী</h2>
+                <p>আপনার পছন্দে, আপনার সময়ে।</p>
+            </div>
+        </div>
+        <div class="nav-right">
+            <a href="#" onclick="openPaymentModal()" class="bkash-badge">৳ বিকাশ সাবস্ক্রিপশন</a>
+        </div>
+    </nav>
 
+    <!-- Hero Section -->
+    <div class="hero">
+        <h1>মনের মতো মানুষ, একসাথে নতুন আগামী।</h1>
+        <p>বাংলাদেশের ৬৪ জেলার যাচাইকৃত বায়োডাটা থেকে আপনার জীবনসঙ্গী খুঁজুন।</p>
+    </div>
+
+    <!-- Main Wizard Container -->
     <div class="container">
         
-        <!-- Payment & Packages Section -->
-        <div class="card">
-            <h3>💳 বিকাশ পেমেন্ট ও পাসকোড আনলক সিস্টেম</h3>
-            <p>আমাদের বিকাশ পার্সোনাল নম্বর: <strong>01734883213</strong> (Send Money করুন)</p>
-            <div class="bkash-box">
-                <strong>প্যাকেজসমূহ:</strong><br>
-                • <strong>১৫ টাকা:</strong> ১ দিন (৩টি বায়োডাটা আনলক)<br>
-                • <strong>৫০ টাকা:</strong> ৭ দিন (১০টি বায়োডাটা আনলক)<br>
-                • <strong>২৩৯ টাকা:</strong> ১ মাস (৩০টি বায়োডাটা আনলক)<br>
-                • <strong>৫৯৯ টাকা:</strong> ৩ মাস (১০০টি বায়োডাটা আনলক)<br><br>
-                <em>পেমেন্ট করার পর ট্রানজেকশন আইডি সহ হোয়াটসঅ্যাপে মেসেজ পাঠালে তাতক্ষণিক আনলক পাসকোড পাবেন।</em>
-            </div>
-            <a href="https://wa.me/8801734883213?text=Assalamu%20Alaikum,%20I%20sent%20payment%20via%20Bkash" class="btn whatsapp-btn" target="_blank">💬 বিকাশ পেমেন্ট করে পাসকোড নিন</a>
+        <!-- Step Indicator -->
+        <div class="step-indicator">
+            <span id="ind-1" class="active">১. পছন্দ</span> &gt; 
+            <span id="ind-2">২. বিভাগ/জেলা</span> &gt; 
+            <span id="ind-3">৩. প্রোফাইল</span>
         </div>
 
-        <!-- Filter & Search Section -->
-        <div class="card">
-            <h3>🔍 ৬৪ জেলার পাত্র-পাত্রীর বায়োডাটা ফিল্টার</h3>
-            <div class="filter-box">
-                <select id="districtFilter" onchange="filterData()">
-                    <option value="all">সকল জেলা (৬৪ জেলা)</option>
-                    <option value="লক্ষ্মীপুর">লক্ষ্মীপুর</option>
-                    <option value="চট্টগ্রাম">চট্টগ্রাম</option>
-                    <option value="ঢাকা">ঢাকা</option>
-                    <option value="সিলেট">সিলেট</option>
-                    <option value="কুমিল্লা">কুমিল্লা</option>
-                    <option value="রাজশাহী">রাজশাহী</option>
-                    <option value="বরিশাল">বরিশাল</option>
-                    <option value="খুলনা">খুলনা</option>
-                </select>
-                <select id="typeFilter" onchange="filterData()">
-                    <option value="all">উভয় (পাত্র ও পাত্রী)</option>
-                    <option value="groom">পাত্রের বায়োডাটা</option>
-                    <option value="bride">পাত্রীর বায়োডাটা</option>
-                </select>
-            </div>
-
-            <!-- Biodata Grid (Sample List from 300+ Database) -->
-            <div class="biodata-grid" id="biodataList">
-                
-                <!-- Profile 1 -->
-                <div class="biodata-card" data-district="লক্ষ্মীপুর" data-type="groom">
-                    <h4>ID: #SP-101 (পাত্র)</h4>
-                    <p><strong>জেলা:</strong> লক্ষ্মীপুর</p>
-                    <p><strong>পেশা:</strong> টেক্সটাইল ইঞ্জিনিয়ার / গার্মেন্টস ম্যানেজার</p>
-                    <p><strong>বয়স:</strong> ২৫ বছর | <strong>উচ্চতা:</strong> ৫' ৭"</p>
-                    <p><strong>যোগাযোগ:</strong> <span class="blur-info secret-info">0173488XXXX</span></p>
-                    <button class="btn" onclick="unlockProfile(this)">🔓 পাসকোড দিয়ে আনলক করুন</button>
+        <!-- STEP 1: Choose Type -->
+        <div id="step-1" class="wizard-step">
+            <h3 class="section-title">আপনি পাত্র নাকি পাত্রী খুঁজছেন?</h3>
+            <div class="options-grid">
+                <div class="option-card" onclick="selectType('groom')">
+                    <div>
+                        <h3>পাত্রের বায়োডাটা খুঁজছি</h3>
+                        <p>যোগ্য ও ভেরিফাইড পাত্রদের তালিকা দেখুন</p>
+                    </div>
+                    <span>➔</span>
                 </div>
-
-                <!-- Profile 2 -->
-                <div class="biodata-card" data-district="চট্টগ্রাম" data-type="bride">
-                    <h4>ID: #SP-102 (পাত্রী)</h4>
-                    <p><strong>জেলা:</strong> চট্টগ্রাম</p>
-                    <p><strong>পেশা:</strong> সরকারি প্রাথমিক শিক্ষিকা</p>
-                    <p><strong>বয়স:</strong> ২২ বছর | <strong>উচ্চতা:</strong> ৫' ৩"</p>
-                    <p><strong>যোগাযোগ:</strong> <span class="blur-info secret-info">01819XXXXXX</span></p>
-                    <button class="btn" onclick="unlockProfile(this)">🔓 পাসকোড দিয়ে আনলক করুন</button>
+                <div class="option-card" onclick="selectType('bride')">
+                    <div>
+                        <h3>পাত্রীর বায়োডাটা খুঁজছি</h3>
+                        <p>যোগ্য ও ভেরিফাইড পাত্রীদের তালিকা দেখুন</p>
+                    </div>
+                    <span>➔</span>
                 </div>
-
-                <!-- Profile 3 -->
-                <div class="biodata-card" data-district="ঢাকা" data-type="groom">
-                    <h4>ID: #SP-103 (পাত্র)</h4>
-                    <p><strong>জেলা:</strong> ঢাকা</p>
-                    <p><strong>পেশা:</strong> সফটওয়্যার ডেভেলপার</p>
-                    <p><strong>বয়স:</strong> ২৭ বছর | <strong>উচ্চতা:</strong> ৫' ৯"</p>
-                    <p><strong>যোগাযোগ:</strong> <span class="blur-info secret-info">01911XXXXXX</span></p>
-                    <button class="btn" onclick="unlockProfile(this)">🔓 পাসকোড দিয়ে আনলক করুন</button>
-                </div>
-
-                <!-- Profile 4 -->
-                <div class="biodata-card" data-district="লক্ষ্মীপুর" data-type="bride">
-                    <h4>ID: #SP-104 (পাত্রী)</h4>
-                    <p><strong>জেলা:</strong> লক্ষ্মীপুর</p>
-                    <p><strong>পেশা:</strong> গৃহিনী / অনার্স ফাইনাল ইয়ার</p>
-                    <p><strong>বয়স:</strong> ২১ বছর | <strong>উচ্চতা:</strong> ৫' ২"</p>
-                    <p><strong>যোগাযোগ:</strong> <span class="blur-info secret-info">01712XXXXXX</span></p>
-                    <button class="btn" onclick="unlockProfile(this)">🔓 পাসকোড দিয়ে আনলক করুন</button>
-                </div>
-
-                <!-- Profile 5 -->
-                <div class="biodata-card" data-district="সিলেট" data-type="groom">
-                    <h4>ID: #SP-105 (পাত্র)</h4>
-                    <p><strong>জেলা:</strong> সিলেট</p>
-                    <p><strong>পেশা:</strong> ব্যবসায়ী (রেস্টুরেন্ট প্রোপাইটর)</p>
-                    <p><strong>বয়স:</strong> ২৮ বছর | <strong>উচ্চতা:</strong> ৫' ৮"</p>
-                    <p><strong>যোগাযোগ:</strong> <span class="blur-info secret-info">01670XXXXXX</span></p>
-                    <button class="btn" onclick="unlockProfile(this)">🔓 পাসকোড দিয়ে আনলক করুন</button>
-                </div>
-
             </div>
         </div>
 
-        <!-- Free Social Reward Policy -->
-        <div class="card">
-            <h3>🎁 ৮০+ লাইকে ফ্রি বায়োডাটা আনলক!</h3>
-            <p>আমাদের প্ল্যাটফর্মের পোস্ট ফেসবুকে বা টিকটকে শেয়ার করে ৮০+ লাইক পাওয়ার স্ক্রিনশট পাঠালে ২৪ ঘণ্টার জন্য ফ্রি ১টি বায়োডাটা আনলক পাসকোড পাবেন।</p>
-            <a href="https://wa.me/8801734883213?text=Assalamu%20Alaikum,%20I%20have%20sent%20screenshot%20for%20free%20unlock" class="btn whatsapp-btn" target="_blank">💬 স্ক্রিনশট পাঠাতে এখানে ক্লিক করুন</a>
-        </div>
-
-        <!-- Decoration Directory (Barter Policy) -->
-        <div class="card">
-            <h3>🎉 ডেকোরেশন ও সাউন্ড সার্ভিস ডিরেক্টরি</h3>
-            <p>লক্ষ্মীপুর, চট্টগ্রাম ও ঢাকাসহ সারা দেশের সেরা ডেকোরেশন ও স্টেজ সার্ভিস লাইটিং তালিকা:</p>
+        <!-- STEP 2: Choose Division / District (64 Districts Support) -->
+        <div id="step-2" class="wizard-step" style="display:none;">
+            <button class="back-btn" onclick="goToStep(1)">← পেছনে</button>
+            <h3 class="section-title">কোন এলাকা থেকে খুঁজছেন?</h3>
             
-            <div class="directory-item">
-                <strong>রয়্যাল ডেকোরেটর & ইভেন্ট</strong> (লক্ষ্মীপুর) - বিয়ে, হলুদ ও সাউন্ড সিস্টেম ডিল।
+            <div class="input-group">
+                <label>বিভাগ বা ৬৪ জেলার যেকোনো একটি সিলেক্ট করুন:</label>
+                <select id="districtSelect" onchange="loadProfiles()">
+                    <option value="all">🌐 সকল বিভাগ ও ৬৪ জেলা (সব দেখুন)</option>
+                    <optgroup label="ঢাকা বিভাগ">
+                        <option value="ঢাকা">ঢাকা</option>
+                        <option value="গাজীপুর">গাজীপুর</option>
+                        <option value="নারায়ণগঞ্জ">নারায়ণগঞ্জ</option>
+                        <option value="টাঙ্গাইল">টাঙ্গাইল</option>
+                        <option value="নরসিংদী">নরসিংদী</option>
+                    </optgroup>
+                    <optgroup label="চট্টগ্রাম বিভাগ">
+                        <option value="লক্ষ্মীপুর">লক্ষ্মীপুর</option>
+                        <option value="চট্টগ্রাম">চট্টগ্রাম</option>
+                        <option value="কুমিল্লা">কুমিল্লা</option>
+                        <option value="নোয়াখালী">নোয়াখালী</option>
+                        <option value="ফেনী">ফেনী</option>
+                        <option value="চাঁদপুর">চাঁদপুর</option>
+                    </optgroup>
+                    <optgroup label="অন্যান্য জেলা">
+                        <option value="সিলেট">সিলেট</option>
+                        <option value="রাজশাহী">রাজশাহী</option>
+                        <option value="খুলনা">খুলনা</option>
+                        <option value="বরিশাল">বরিশাল</option>
+                        <option value="রংপুর">রংপুর</option>
+                        <option value="ময়মনসিংহ">ময়মনসিংহ</option>
+                    </optgroup>
+                </select>
             </div>
-            <div class="directory-item">
-                <strong>চাটগাঁ ওয়েডিং সার্ভিস</strong> (চট্টগ্রাম) - লাইটিং, সাউন্ড ও ক্যাটারিং ব্যবস্থাপনা।
-            </div>
+            <button class="btn-main" onclick="goToStep(3)">প্রোফাইল তালিকা দেখুন</button>
+        </div>
 
-            <p style="font-size: 13px; color: #666; margin-top: 10px;"><em>(বার্টার পলিসি: ডেকোরেশন ব্যবসায়ীরা ফ্রিতে বিজ্ঞাপন যুক্ত করতে আমাদের প্রচার করুন)</em></p>
-            <a href="https://wa.me/8801734883213?text=Assalamu%20Alaikum,%20I%20want%20to%20add%20my%20decoration%20business%20directory" class="btn whatsapp-btn" target="_blank">📢 ফ্রিতে ডেকোরেশন সার্ভিস লিস্ট করুন</a>
+        <!-- STEP 3: Profile Results & Unlock System -->
+        <div id="step-3" class="wizard-step" style="display:none;">
+            <button class="back-btn" onclick="goToStep(2)">← জেলা পরিবর্তন করুন</button>
+            <h3 class="section-title" id="resultTitle">নির্বাচিত বায়োডাটা সমূহের তালিকা</h3>
+            
+            <div id="profileContainer">
+                <!-- Profile Item 1 -->
+                <div class="profile-card" data-district="লক্ষ্মীপুর" data-type="groom">
+                    <div class="profile-header">
+                        <h4>ID: #SP-801 (পাত্র)</h4>
+                        <span style="font-size: 12px; background: #eee; padding: 3px 8px; border-radius: 4px;">লক্ষ্মীপুর</span>
+                    </div>
+                    <p><strong>পেশা:</strong> গার্মেন্টস সেকশন অপারেশন ম্যানেজার</p>
+                    <p><strong>শিক্ষাগত যোগ্যতা:</strong> স্নাতক (Honours)</p>
+                    <p><strong>যোগাযোগ নম্বর:</strong> <span class="blur-info contact-field">01734883213</span></p>
+                    <button class="unlock-btn" onclick="openUnlockModal(this)">🔓 পাসকোড দিয়ে নাম্বার আনলক করুন</button>
+                </div>
+
+                <!-- Profile Item 2 -->
+                <div class="profile-card" data-district="চট্টগ্রাম" data-type="bride">
+                    <div class="profile-header">
+                        <h4>ID: #SP-802 (পাত্রী)</h4>
+                        <span style="font-size: 12px; background: #eee; padding: 3px 8px; border-radius: 4px;">চট্টগ্রাম</span>
+                    </div>
+                    <p><strong>পেশা:</strong> সরকারি প্রাইমারি শিক্ষক</p>
+                    <p><strong>শিক্ষাগত যোগ্যতা:</strong> মাস্টার্স</p>
+                    <p><strong>যোগাযোগ নম্বর:</strong> <span class="blur-info contact-field">01819234567</span></p>
+                    <button class="unlock-btn" onclick="openUnlockModal(this)">🔓 পাসকোড দিয়ে নাম্বার আনলক করুন</button>
+                </div>
+
+                <!-- Profile Item 3 -->
+                <div class="profile-card" data-district="ঢাকা" data-type="groom">
+                    <div class="profile-header">
+                        <h4>ID: #SP-803 (পাত্র)</h4>
+                        <span style="font-size: 12px; background: #eee; padding: 3px 8px; border-radius: 4px;">ঢাকা</span>
+                    </div>
+                    <p><strong>পেশা:</strong> সফটওয়্যার ইঞ্জিনিয়ার</p>
+                    <p><strong>শিক্ষাগত যোগ্যতা:</strong> বিএসসি ইন সিএসই</p>
+                    <p><strong>যোগাযোগ নম্বর:</strong> <span class="blur-info contact-field">01911987654</span></p>
+                    <button class="unlock-btn" onclick="openUnlockModal(this)">🔓 পাসকোড দিয়ে নাম্বার আনলক করুন</button>
+                </div>
+            </div>
         </div>
 
     </div>
 
+    <!-- Payment & Subscription Modal -->
+    <div id="paymentModal" class="modal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closePaymentModal()">&times;</button>
+            <h3>💎 বিকাশ সাবস্ক্রিপশন ও পাসকোড</h3>
+            <div class="price-box">
+                বিকাশ পার্সোনাল নম্বর: <strong>01734883213</strong><br>
+                • ১৫ টাকা (১ দিন - ৩টি আনলক)<br>
+                • ৫০ টাকা (৭ দিন - ১০টি আনলক)<br>
+                • ২৩৯ টাকা (১ মাস - ৩০টি আনলক)<br>
+                • ৫৯৯ টাকা (৩ মাস - ১০০টি আনলক)
+            </div>
+            <div class="input-group">
+                <label>আপনার বিকাশ বা যোগাযোগের নম্বর দিন:</label>
+                <input type="text" id="userPhone" placeholder="01XXXXXXXXX">
+            </div>
+            <a href="https://wa.me/8801734883213?text=Assalamu%20Alaikum,%20I%20want%20to%20get%20passcode%20for%20Saptapadi" target="_blank" class="whatsapp-link-btn">💬 বিকাশ পেমেন্ট করে পাসকোড নিন</a>
+        </div>
+    </div>
+
+    <!-- Passcode Unlock Modal -->
+    <div id="unlockModal" class="modal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeUnlockModal()">&times;</button>
+            <h3>🔐 পাসকোড ভেরিফিকেশন</h3>
+            <p style="font-size: 13px; text-align: center; color: #666;">টাকা পাঠিয়ে বা ৮০+ লাইকের স্ক্রিনশট দিয়ে WhatsApp থেকে প্রাপ্ত পাসকোডটি এখানে লিখুন:</p>
+            <div class="input-group">
+                <input type="text" id="passcodeInput" placeholder="পাসকোড লিখুন (যেমন: 777)">
+            </div>
+            <button class="btn-main" onclick="verifyPasscode()">ভেরিফাই করুন</button>
+        </div>
+    </div>
+
     <footer>
-        <p>&copy; 2026 Saptapadi.bd | Managed by Kamrul Hasan (@kamrulhosen16)</p>
+        <p>&copy; 2026 Saptapadi.bd | Developed for Kamrul Hasan (@kamrulhosen16)</p>
     </footer>
 
     <script>
-        // Filter logic for 64 districts & Grooms/Brides
-        function filterData() {
-            let dist = document.getElementById('districtFilter').value;
-            let type = document.getElementById('typeFilter').value;
-            let cards = document.querySelectorAll('.biodata-card');
+        let selectedGender = '';
+        let currentBtnToUnlock = null;
 
-            cards.forEach(c => {
-                let dMatch = (dist === 'all' || c.getAttribute('data-district') === dist);
-                let tMatch = (type === 'all' || c.getAttribute('data-type') === type);
-                if(dMatch && tMatch) {
-                    c.style.display = 'block';
-                } else {
-                    c.style.display = 'none';
-                }
-            });
+        function selectType(type) {
+            selectedGender = type;
+            goToStep(2);
         }
 
-        // Secret Passcode Unlock Function
-        function unlockProfile(btnElement) {
-            let userCode = prompt("অনুগ্রহ করে আপনার প্রাপ্ত প্রিমিয়াম পাসকোডটি লিখুন:");
+        function goToStep(stepNumber) {
+            document.querySelectorAll('.wizard-step').forEach(el => el.style.display = 'none');
+            document.getElementById('step-' + stepNumber).style.display = 'block';
             
-            // Default master passcode logic (App Admin can share '777' or 'SAPTAPADI')
-            if (userCode === "777" || userCode === "saptapadi" || userCode === "SAPTAPADI") {
-                let card = btnElement.parentElement;
-                let blurSpan = card.querySelector('.secret-info');
-                blurSpan.classList.add('unlocked-info');
-                blurSpan.innerText = "01734883213 (আনলকড!)";
-                btnElement.innerText = "✅ সফলভাবে আনলক হয়েছে";
-                btnElement.style.backgroundColor = "#2e7d32";
-                btnElement.style.color = "#fff";
-                btnElement.disabled = true;
-                alert("অভিনন্দন! বায়োডাটার যোগাযোগ নম্বর সফলভাবে আনলক হয়েছে।");
-            } else if (userCode !== null) {
-                alert("দুঃখিত, ভুল পাসকোড! বিকাশ পেমেন্ট করে অথবা ফেসবুকে শেয়ার করে সঠিক পাসকোড সংগ্রহ করুন।");
+            for(let i=1; i<=3; i++) {
+                let ind = document.getElementById('ind-' + i);
+                if(i <= stepNumber) ind.classList.add('active');
+                else ind.classList.remove('active');
+            }
+        }
+
+        function loadProfiles() {
+            // Filter logic can be extended for all 64 districts dynamically
+        }
+
+        function goToStep(stepNumber) {
+            document.querySelectorAll('.wizard-step').forEach(el => el.style.display = 'none');
+            document.getElementById('step-' + stepNumber).style.display = 'block';
+            
+            for(let i=1; i<=3; i++) {
+                let ind = document.getElementById('ind-' + i);
+                if(i <= stepNumber) ind.classList.add('active');
+                else ind.classList.remove('active');
+            }
+        }
+
+        function openPaymentModal() {
+            document.getElementById('paymentModal').style.display = 'flex';
+        }
+        function closePaymentModal() {
+            document.getElementById('paymentModal').style.display = 'none';
+        }
+
+        function openUnlockModal(btn) {
+            currentBtnToUnlock = btn;
+            document.getElementById('unlockModal').style.display = 'flex';
+        }
+        function closeUnlockModal() {
+            document.getElementById('unlockModal').style.display = 'none';
+        }
+
+        function verifyPasscode() {
+            let code = document.getElementById('passcodeInput').value.trim();
+            if(code === "777" || code === "saptapadi" || code === "SAPTAPADI") {
+                let card = currentBtnToUnlock.parentElement;
+                let contactSpan = card.querySelector('.contact-field');
+                contactSpan.classList.add('unlocked');
+                currentBtnToUnlock.innerText = "✅ সফলভাবে আনলক হয়েছে";
+                currentBtnToUnlock.style.background = "#2E7D32";
+                currentBtnToUnlock.style.color = "#fff";
+                currentBtnToUnlock.disabled = true;
+                closeUnlockModal();
+                alert("অভিনন্দন! বায়োডাটার যোগাযোগ নম্বর সফলভাবে আনলক করা হয়েছে।");
+            } else {
+                alert("দুঃখিত, ভুল পাসকোড! সঠিক পাসকোডের জন্য হোয়াটসঅ্যাপে যোগাযোগ করুন।");
             }
         }
     </script>
