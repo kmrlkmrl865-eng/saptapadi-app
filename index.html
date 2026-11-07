@@ -4,13 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>সপ্তপদী (Saptapadi.bd) - বিশ্বস্ত ম্যাট্রিমনি ও ওয়েডিং ডিরেক্টরি</title>
-    <!-- SEO & Social Meta Tags -->
-    <meta name="description" content="বাংলাদেশের সেরা ম্যাট্রিমনি ও ওয়েডিং ডিরেক্টরি প্ল্যাটফর্ম। ৬৪ জেলার যাচাইকৃত বায়োডাটা এবং ডেকোরেশন সার্ভিস।">
-    <meta name="keywords" content="সপ্তপদী, Saptapadi, Matrimony Bangladesh, Biye, Wedding Directory, Lakshmipur Matrimony, Chittagong Biye">
+    <meta name="description" content="বাংলাদেশের ৬৪ জেলার যাচাইকৃত বায়োডাটা এবং ডেকোরেশন সার্ভিস।">
     <style>
         :root {
-            --primary-color: #722F37; /* Burgundy */
-            --secondary-color: #D4AF37; /* Royal Golden */
+            --primary-color: #722F37;
+            --secondary-color: #D4AF37;
             --bg-color: #F9F6F0;
             --text-color: #333333;
             --card-bg: #FFFFFF;
@@ -26,136 +24,184 @@
             background: linear-gradient(135deg, var(--primary-color), #4A151B);
             color: var(--secondary-color);
             text-align: center;
-            padding: 25px 15px;
+            padding: 20px 10px;
             border-bottom: 4px solid var(--secondary-color);
         }
-        header h1 {
-            margin: 0;
-            font-size: 28px;
-            letter-spacing: 1px;
-        }
-        header p {
-            margin: 8px 0 0 0;
-            color: #FFF;
-            font-size: 14px;
-        }
-        .container {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 15px;
-        }
+        header h1 { margin: 0; font-size: 26px; }
+        header p { margin: 5px 0 0 0; color: #FFF; font-size: 13px; }
+        .container { max-width: 900px; margin: 15px auto; padding: 10px; }
         .card {
             background: var(--card-bg);
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-            padding: 20px;
-            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+            padding: 15px;
+            margin-bottom: 15px;
             border-top: 4px solid var(--secondary-color);
         }
-        .card h3 {
-            color: var(--primary-color);
-            margin-top: 0;
-            border-bottom: 2px solid var(--bg-color);
-            padding-bottom: 8px;
+        .card h3 { color: var(--primary-color); margin-top: 0; }
+        .filter-box {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 15px;
         }
+        .filter-box select {
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            flex: 1;
+            min-width: 140px;
+        }
+        .biodata-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 15px;
+        }
+        .biodata-card {
+            background: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 12px;
+            position: relative;
+        }
+        .biodata-card h4 { margin: 0 0 5px 0; color: var(--primary-color); }
+        .biodata-card p { margin: 4px 0; font-size: 13px; color: #555; }
+        .blur-text { filter: blur(5px); user-select: none; color: #888; }
         .btn {
             background-color: var(--secondary-color);
             color: #000;
             font-weight: bold;
             border: none;
-            padding: 10px 18px;
-            border-radius: 6px;
+            padding: 8px 12px;
+            border-radius: 5px;
             cursor: pointer;
             text-decoration: none;
             display: inline-block;
-            margin-top: 10px;
-            transition: 0.3s;
-        }
-        .btn:hover {
-            opacity: 0.9;
-            transform: translateY(-2px);
-        }
-        .whatsapp-btn {
-            background-color: #25D366;
-            color: #FFF;
-        }
-        .share-box {
-            background: #FFF8E7;
-            border: 1px dashed var(--secondary-color);
-            padding: 12px;
-            border-radius: 8px;
-            font-size: 14px;
-            margin-top: 10px;
-        }
-        footer {
-            text-align: center;
-            padding: 15px;
-            background: #333;
-            color: #FFF;
+            margin-top: 8px;
             font-size: 13px;
-            margin-top: 30px;
         }
+        .whatsapp-btn { background-color: #25D366; color: #FFF; }
+        .bkash-box {
+            background: #FDF2F4;
+            border: 1px dashed var(--primary-color);
+            padding: 10px;
+            border-radius: 6px;
+            font-size: 13px;
+            margin-top: 10px;
+        }
+        footer { text-align: center; padding: 15px; background: #333; color: #FFF; font-size: 12px; }
     </style>
 </head>
 <body>
 
     <header>
         <h1>🌹 সপ্তপদী (Saptapadi.bd) 🌹</h1>
-        <p>আপনার জীবনের কাঙ্ক্ষিত জীবনসঙ্গী ও ওয়েডিং ডিরেক্টরি</p>
+        <p>বাংলাদেশের সবচেয়ে বিশ্বস্ত ম্যাট্রিমনি ও ওয়েডিং ডিরেক্টরি</p>
     </header>
 
     <div class="container">
-        <!-- Section 1: Matrimony Search -->
+        
+        <!-- Payment & Packages Section -->
         <div class="card">
-            <h3>🔍 পাত্র-পাত্রীর বায়োডাটা খুঁজুন</h3>
-            <p>বাংলাদেশের ৬৪ জেলার ভেরিফাইড পাত্র-পাত্রীর বায়োডাটা থেকে আপনার পছন্দমতো জীবনসঙ্গী খুঁজে নিন।</p>
-            <button class="btn" onclick="alert('ফিল্টার ও বায়োডাটা সেকশন চালু হচ্ছে...')">বায়োডাটা তালিকা দেখুন</button>
-        </div>
-
-        <!-- Section 2: Free Reward & Unlock System -->
-        <div class="card">
-            <h3>🎁 ৮০+ লাইকে ১টি বায়োডাটা ফ্রি আনলক!</h3>
-            <p>আমাদের প্ল্যাটফর্মটি ফেসবুকে বা টিকটকে শেয়ার করে <strong>৮০+ লাইক বা স্ক্রিনশট</strong> আমাদের হোয়াটসঅ্যাপে পাঠালেই পেয়ে যান ২৪ ঘণ্টার ফ্রি পাসকোড ও ১টি প্রিমিয়াম বায়োডাটা আনলক করার সুযোগ!</p>
-            <a href="https://wa.me/8801734883213?text=Assalamu%20Alaikum,%20I%20have%20got%2080%20likes,%20please%20give%20me%20free%20passcode" class="btn whatsapp-btn" target="_blank">💬 স্ক্রিনশট পাঠিয়ে ফ্রি পাসকোড নিন</a>
-        </div>
-
-        <!-- Section 3: Packages -->
-        <div class="card">
-            <h3>💎 প্রিমিয়াম আনলক প্যাকেজ</h3>
-            <ul>
-                <li>১৫ টাকা — ১ দিন (৩টি আনলক, অটো টাইমার)</li>
-                <li>৫০ টাকা — ৭ দিন (১০টি আনলক)</li>
-                <li>২৩৯ টাকা — ১ মাস (৩০টি আনলক)</li>
-                <li>৫৯৯ টাকা — ৩ মাস (১০০টি আনলক)</li>
-            </ul>
-            <p>বিকাশ নম্বর: <strong>01734883213</strong></p>
-        </div>
-
-        <!-- Section 4: Decoration & Vendor Directory (Barter Policy) -->
-        <div class="card">
-            <h3>🎉 ডেকোরেশন ও সাউন্ড সার্ভিস ডিরেক্টরি</h3>
-            <p>লক্ষ্মীপুর, চট্টগ্রাম, ঢাকাসহ দেশজুড়ে সেরা ডেকোরেশন, সাউন্ড ও লাইটিং সার্ভিস। ডেকোরেশন ব্যবসায়ীরা আমাদের প্ল্যাটফর্ম প্রচারের মাধ্যমে সম্পূর্ণ <strong>ফ্রিতে</strong> তাদের বিজ্ঞাপন যুক্ত করতে পারবেন।</p>
-            <div class="share-box">
-                <strong>ব্যবসায়ীদের জন্য অফার:</strong> আপনার সার্ভিসটি ফ্রিতে যুক্ত করতে আমাদের হোয়াটসঅ্যাপে যোগাযোগ করুন।
+            <h3>💳 বিকাশ পেমেন্ট ও পাসকোড আনলক সিস্টেম</h3>
+            <p>আমাদের বিকাশ পার্সোনাল নম্বর: <strong>01734883213</strong> (Send Money করুন)</p>
+            <div class="bkash-box">
+                <strong>প্যাকেজসমূহ:</strong><br>
+                • ১৫ টাকা — ১ দিন (৩টি আনলক)<br>
+                • ৫০ টাকা — ৭ দিন (১০টি আনলক)<br>
+                • ২৩৯ টাকা — ১ মাস (৩০টি আনলক)<br>
+                পেমেন্ট করে ট্রানজেকশন আইডি সহ হোয়াটসঅ্যাপে নক করলে ইনস্ট্যান্ট পাসকোড পেয়ে যাবেন!
             </div>
-            <a href="https://wa.me/8801734883213?text=Assalamu%20Alaikum,%20I%20want%20to%20list%20my%20decoration%20service%20for%20free%20in%20Saptapadi" class="btn whatsapp-btn" target="_blank">📢 ফ্রিতে ডেকোরেশন লিস্টিং করুন</a>
+            <a href="https://wa.me/8801734883213?text=Assalamu%20Alaikum,%20I%20want%20to%20get%20passcode%20via%20Bkash" class="btn whatsapp-btn" target="_blank">💬 বিকাশ পেমেন্ট করতে হোয়াটসঅ্যাপে যান</a>
         </div>
 
-        <!-- Section 5: Share Promos -->
+        <!-- Filter Section -->
         <div class="card">
-            <h3>📲 এক ক্লিকে শেয়ার করুন</h3>
-            <div class="share-box">
-                <strong>বাংলা:</strong> পাত্র-পাত্রী খুঁজছেন? কিংবা বিয়ের ডেকোরেশন সার্ভিস দরকার? এখনই ভিজিট করুন: Saptapadi.bd | WhatsApp: 01734883213
+            <h3>🔍 জেলা ও ক্যাটাগরি অনুযায়ী বায়োডাটা খুঁজুন</h3>
+            <div class="filter-box">
+                <select id="districtFilter" onchange="filterBiodata()">
+                    <option value="all">সকল জেলা (64 Districts)</option>
+                    <option value="Lakshmipur">লক্ষ্মীপুর</option>
+                    <option value="Chittagong">চট্টগ্রাম</option>
+                    <option value="Dhaka">ঢাকা</option>
+                    <option value="Sylhet">সিলেট</option>
+                </select>
+                <select id="typeFilter" onchange="filterBiodata()">
+                    <option value="all">পাত্র ও পাত্রী উভয়</option>
+                    <option value="groom">পাত্রের বায়োডাটা</option>
+                    <option value="bride">পাত্রীর বায়োডাটা</option>
+                </select>
             </div>
-            <div class="share-box" style="margin-top: 8px;">
-                <strong>English:</strong> Looking for a Life Partner or Wedding Decoration Services? Visit: Saptapadi.bd | WhatsApp: 01734883213
+
+            <!-- Biodata List Grid (300+ Sample Database Structure) -->
+            <div class="biodata-grid" id="biodataContainer">
+                <div class="biodata-card" data-district="Lakshmipur" data-type="groom">
+                    <h4>ID: #SP-101 (পাত্র)</h4>
+                    <p><strong>জেলা:</strong> লক্ষ্মীপুর</p>
+                    <p><strong>পেশা:</strong> চাকরিজীবী</p>
+                    <p><strong>শিক্ষাগত যোগ্যতা:</strong> স্নাতক</p>
+                    <p><strong>মোবাইল/যোগাযোগ:</strong> <span class="blur-text">017XXXXXXXX</span></p>
+                    <button class="btn" onclick="alert('পাসকোড দিয়ে আনলক করুন অথবা হোয়াটসঅ্যাপে যোগাযোগ করুন!')">🔓 পাসকোড দিয়ে আনলক করুন</button>
+                </div>
+
+                <div class="biodata-card" data-district="Chittagong" data-type="bride">
+                    <h4>ID: #SP-102 (পাত্রী)</h4>
+                    <p><strong>জেলা:</strong> চট্টগ্রাম</p>
+                    <p><strong>পেশা:</strong> শিক্ষক</p>
+                    <p><strong>শিক্ষাগত যোগ্যতা:</strong> মাস্টার্স</p>
+                    <p><strong>মোবাইল/যোগাযোগ:</strong> <span class="blur-text">018XXXXXXXX</span></p>
+                    <button class="btn" onclick="alert('পাসকোড দিয়ে আনলক করুন অথবা হোয়াটসঅ্যাপে যোগাযোগ করুন!')">🔓 পাসকোড দিয়ে আনলক করুন</button>
+                </div>
+
+                <div class="biodata-card" data-district="Dhaka" data-type="groom">
+                    <h4>ID: #SP-103 (পাত্র)</h4>
+                    <p><strong>জেলা:</strong> ঢাকা</p>
+                    <p><strong>পেশা:</strong> ব্যবসায়ী</p>
+                    <p><strong>শিক্ষাগত যোগ্যতা:</strong> বিএসসি</p>
+                    <p><strong>মোবাইল/যোগাযোগ:</strong> <span class="blur-text">019XXXXXXXX</span></p>
+                    <button class="btn" onclick="alert('পাসকোড দিয়ে আনলক করুন অথবা হোয়াটসঅ্যাপে যোগাযোগ করুন!')">🔓 পাসকোড দিয়ে আনলক করুন</button>
+                </div>
+
+                <div class="biodata-card" data-district="Sylhet" data-type="bride">
+                    <h4>ID: #SP-104 (পাত্রী)</h4>
+                    <p><strong>জেলা:</strong> সিলেট</p>
+                    <p><strong>পেশা:</strong> ডাক্তার</p>
+                    <p><strong>শিক্ষাগত যোগ্যতা:</strong> এমবিবিএস</p>
+                    <p><strong>মোবাইল/যোগাযোগ:</strong> <span class="blur-text">016XXXXXXXX</span></p>
+                    <button class="btn" onclick="alert('পাসকোড দিয়ে আনলক করুন অথবা হোয়াটসঅ্যাপে যোগাযোগ করুন!')">🔓 পাসকোড দিয়ে আনলক করুন</button>
+                </div>
             </div>
         </div>
+
+        <!-- Free Reward Section -->
+        <div class="card">
+            <h3>🎁 ৮০+ লাইকে ফ্রি বায়োডাটা আনলক</h3>
+            <p>ফেসবুক বা টিকটকে আমাদের প্ল্যাটফর্ম শেয়ার করে ৮০+ লাইক বা স্ক্রিনশট পাঠালে ফ্রি পাসকোড পাবেন।</p>
+            <a href="https://wa.me/8801734883213?text=Assalamu%20Alaikum,%20I%20sent%20screenshot%20for%20free%20unlock" class="btn whatsapp-btn" target="_blank">💬 স্ক্রিনশট পাঠান</a>
+        </div>
+
     </div>
 
     <footer>
         <p>&copy; 2026 Saptapadi.bd | Developed for Kamrul Hasan (@kamrulhosen16)</p>
     </footer>
 
+    <script>
+        function filterBiodata() {
+            let district = document.getElementById('districtFilter').value;
+            let type = document.getElementById('typeFilter').value;
+            let cards = document.querySelectorAll('.biodata-card');
+
+            cards.forEach(card => {
+                let dMatch = (district === 'all' || card.getAttribute('data-district') === district);
+                let tMatch = (type === 'all' || card.getAttribute('data-type') === type);
+                if(dMatch && tMatch) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
 </body>
 </html>
