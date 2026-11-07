@@ -3,247 +3,115 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- SEO Optimization -->
-    <title>সপ্তপদী (Saptapadi.bd) - সেরা ম্যাট্রিমনি ও ওয়েডিং ডিরেক্টরি</title>
-    <meta name="description" content="সপ্তপদী (Saptapadi.bd) - বাংলাদেশের ৬৪ জেলার ভেরিফাইড পাত্র-পাত্রীর বায়োডাটা ও ডেকোরেশন সেবা।">
-    <meta name="keywords" content="Saptapadi bd, ম্যাট্রিমনি, বিবাহ, পাত্র পাত্রী, ৬৪ জেলা, ডেকোরেশন">
-    <style>
-        :root {
-            --primary: #722F37;
-            --secondary: #D4AF37;
-            --bg: #FDFBF7;
-            --card-bg: #FFFFFF;
-            --text: #2B2B2B;
-        }
-        body { font-family: 'Segoe UI', Arial, sans-serif; background: var(--bg); color: var(--text); margin: 0; padding: 0; }
-        header { background: linear-gradient(135deg, var(--primary), #4A151B); color: var(--secondary); text-align: center; padding: 25px 15px; position: relative; }
-        header h1 { margin: 0; font-size: 28px; letter-spacing: 1px; }
-        header p { margin: 5px 0 0; color: #FFF; font-size: 13px; }
-        .admin-trigger { position: absolute; top: 15px; right: 15px; background: rgba(255,255,255,0.2); color: #fff; padding: 5px 10px; border-radius: 5px; cursor: pointer; font-size: 12px; }
-        
-        .container { max-width: 800px; margin: 15px auto; padding: 10px; }
-        
-        /* Wizard Steps */
-        .wizard-card { background: var(--card-bg); border-radius: 12px; padding: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.06); margin-bottom: 20px; border-top: 4px solid var(--secondary); }
-        .step-indicator { display: flex; justify-content: space-around; margin-bottom: 20px; font-weight: bold; color: #777; font-size: 14px; border-bottom: 1px solid #eee; padding-bottom: 10px; }
-        .step-indicator .active { color: var(--primary); border-bottom: 2px solid var(--primary); }
-        
-        .grid-options { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
-        .opt-btn { background: #FAF5EF; border: 2px solid var(--secondary); padding: 18px; border-radius: 10px; text-align: center; cursor: pointer; font-weight: bold; color: var(--primary); font-size: 16px; transition: 0.3s; }
-        .opt-btn:hover { background: var(--primary); color: #FFF; }
-
-        /* Payment Section & One Click Copy */
-        .bkash-box { background: #FDF2F4; border: 2px dashed var(--primary); padding: 15px; border-radius: 10px; text-align: center; margin-bottom: 20px; }
-        .copy-box { display: inline-flex; align-items: center; gap: 10px; background: #fff; border: 1px solid #ccc; padding: 6px 14px; border-radius: 20px; margin: 8px 0; font-weight: bold; color: var(--primary); }
-        .copy-btn { background: var(--secondary); border: none; padding: 4px 10px; border-radius: 12px; cursor: pointer; font-size: 12px; font-weight: bold; }
-        
-        /* Profile Feed (Infinite Scroll) */
-        .biodata-card { background: #fff; border: 1px solid #E5E5E5; border-radius: 10px; padding: 15px; margin-bottom: 15px; box-shadow: 0 2px 8px rgba(0,0,0,0.04); position: relative; }
-        .biodata-card h4 { margin: 0 0 8px; color: var(--primary); border-bottom: 1px solid #eee; padding-bottom: 5px; }
-        .blur-data { filter: blur(7px); user-select: none; background: #EEE; padding: 2px 6px; border-radius: 4px; }
-        .unlocked-data { filter: none !important; background: #E8F5E9 !important; color: #2E7D32 !important; font-weight: bold; }
-        .btn-action { background: var(--secondary); color: #000; font-weight: bold; border: none; padding: 8px 14px; border-radius: 6px; cursor: pointer; margin-top: 10px; }
-
-        /* Modal Popup */
-        .modal { display: none; position: fixed; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.6); justify-content: center; align-items: center; z-index: 1000; }
-        .modal-content { background: #fff; width: 90%; max-width: 450px; padding: 20px; border-radius: 10px; position: relative; }
-        .close-btn { position: absolute; top: 10px; right: 15px; font-size: 20px; cursor: pointer; }
-        input, select { width: 100%; padding: 10px; margin: 8px 0; border: 1px solid #ccc; border-radius: 6px; box-sizing: border-box; }
-        
-        footer { text-align: center; padding: 20px; background: #222; color: #fff; font-size: 12px; margin-top: 30px; }
-    </style>
+    <title>সপ্তপদী (Saptapadi.bd) - ইসলামিক হালাল বিবাহ সেবা</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+    <!-- হেডার ও ব্র্যান্ডিং -->
     <header>
-        <h1>🌹 সপ্তপদী (Saptapadi.bd) 🌹</h1>
-        <p>বাংলাদেশের বিশ্বস্ত ৩-স্টেপ ম্যাট্রিমনি ও ওয়েডিং ডিরেক্টরি</p>
-        <div class="admin-trigger" onclick="openModal('adminModal')">🔑 এডমিন প্যানেল</div>
+        <h1>সপ্তপদী (Saptapadi.bd)</h1>
+        <div class="tagline">"আপনার পছন্দে, আপনার সময়ে।"</div>
+        <div class="credits">ম্যানেজমেন্ট ও রূপকার: মোহাম্মদ কামরুল হাসান (@kamrulhosen16)</div>
     </header>
 
     <div class="container">
-        
-        <!-- Payment & Copy Number Section -->
-        <div class="bkash-box">
-            <h3 style="margin:0; color:var(--primary);">💳 বিকাশ পার্সোনাল (Send Money)</h3>
-            <div class="copy-box">
-                <span id="bkashNum">01734883213</span>
-                <button class="copy-btn" onclick="copyBkash()">কপি করুন 📋</button>
-            </div>
-            <div style="font-size:13px; margin-top:5px;">
-                ১৫টাকা (১দিন, ৩টি) | ৫০টাকা (৭দিন, ১০টি) | ২৩৯টাকা (১মাস, ৩০টি) | ৫৯৯টাকা (৩মাস, ১০০টি)
+
+        <!-- ৪-ওয়ে মাল্টি-লগইন প্যানেল -->
+        <div class="card">
+            <h3>🔐 ৪-ওয়ে মাল্টি-লগইন প্যানেল</h3>
+            <div class="login-grid">
+                <div class="login-btn" style="background:#e8f5e9;">📱 মোবাইল OTP</div>
+                <div class="login-btn" style="background:#ffebee;">📧 Google (Gmail)</div>
+                <div class="login-btn" style="background:#e3f2fd;">📘 Facebook</div>
+                <div class="login-btn" onclick="window.open('https://vm.tiktok.com/ZS9fLU9kpJVAT-YuAVB', '_blank')" style="background:#f3e5f5; border-color:#d1c4e9; cursor:pointer;">🎵 TikTok (@kamrulhosen16)</div>
             </div>
         </div>
 
-        <!-- 3-Step Wizard Section -->
-        <div class="wizard-card">
-            <div class="step-indicator">
-                <span id="st1" class="active">১. পাত্র/পাত্রী</span>
-                <span id="st2">২. বিভাগ ও ৬৪ জেলা</span>
-                <span id="st3">৩. বায়োডাটা</span>
-            </div>
+        <!-- ৬৪ জেলার ইনস্ট্যান্ট সার্চ -->
+        <div class="card">
+            <h3>🔍 ৬৪ জেলার ইনস্ট্যান্ট সার্চ</h3>
+            <input type="text" id="districtSearch" placeholder="আপনার জেলা লিখুন (যেমন: চট্টগ্রাম, ঢাকা)..." style="width: 100%; padding: 10px; border: 1px solid var(--royal-gold); border-radius: 5px; box-sizing: border-box;">
+        </div>
 
-            <!-- Step 1 -->
-            <div id="step1View">
-                <h3 style="text-align:center; color:var(--primary);">আপনি কাকে খুঁজছেন?</h3>
-                <div class="grid-options">
-                    <div class="opt-btn" onclick="setSearchType('groom')">👨 পাত্রের বায়োডাটা</div>
-                    <div class="opt-btn" onclick="setSearchType('bride')">👩 পাত্রীর বায়োডাটা</div>
-                </div>
+        <!-- প্রাইভেসি ব্লার লক প্রোফাইল প্রিভিউ -->
+        <div class="card">
+            <h3>🔒 প্রাইভেসি লক প্রোফাইল প্রিভিউ</h3>
+            <div class="blur-box">
+                <p>নাম: মোহাম্মাদ XXXXX</p>
+                <p>ফোন নম্বর: 017XXXXXXX</p>
+                <p>ঠিকানা: চট্টগ্রাম, বাংলাদেশ</p>
             </div>
+            <p style="font-size: 11px; color: red; margin-top: 6px;">* তথ্য দেখতে পেমেন্ট পাসকোড দিয়ে আনলক করুন।</p>
+        </div>
 
-            <!-- Step 2 -->
-            <div id="step2View" style="display:none;">
-                <h3 style="text-align:center; color:var(--primary);">বিভাগ ও জেলা নির্বাচন করুন</h3>
-                <select id="districtFilter" onchange="filterProfiles()">
-                    <option value="all">🌐 বাংলাদেশের সকল ৬৪ জেলা</option>
-                    <option value="Lakshmipur">লক্ষ্মীপুর</option>
-                    <option value="Chittagong">চট্টগ্রাম</option>
-                    <option value="Dhaka">ঢাকা</option>
-                    <option value="Sylhet">সিলেট</option>
-                    <option value="Comilla">কুমিল্লা</option>
-                </select>
-                <button class="btn-action" style="width:100%; margin-top:15px;" onclick="showStep(3)">বায়োডাটা দেখুন ➔</button>
-            </div>
+        <!-- বিকাশ পেমেন্ট ও প্যাকেজ হেড টেবিল -->
+        <div class="card" style="background: var(--soft-pink);">
+            <h3>💳 বিকাশ পেমেন্ট ও সাবস্ক্রিপশন হেড</h3>
+            <p style="font-size: 13px;">বিকাশ পার্সোনাল নম্বর: <strong>01734883213</strong></p>
+            <button class="btn-gold" onclick="copyBikash()">নম্বর কপি করুন</button>
+            
+            <table>
+                <tr>
+                    <th>প্যাকেজ</th>
+                    <th>মূল্য</th>
+                    <th>আনলক লিমিট</th>
+                </tr>
+                <tr>
+                    <td>ট্রায়াল প্যাক</td>
+                    <td>১৫ টাকা</td>
+                    <td>৩টি বায়োডাটা (৩ দিন)</td>
+                </tr>
+                <tr>
+                    <td>স্ট্যান্ডার্ড প্যাক</td>
+                    <td>৫০ টাকা</td>
+                    <td>১০টি বায়োডাটা (৭ দিন)</td>
+                </tr>
+                <tr>
+                    <td>পপুলার প্যাক</td>
+                    <td>২৩৯ টাকা</td>
+                    <td>৩০টি বায়োডাটা (৩০ দিন)</td>
+                </tr>
+                <tr>
+                    <td>মেগা প্যাক</td>
+                    <td>৫৯৯ টাকা</td>
+                    <td>১০০টি বায়োডাটা (৯০ দিন)</td>
+                </tr>
+            </table>
+        </div>
 
-            <!-- Step 3: Profiles Feed -->
-            <div id="step3View" style="display:none;">
-                <div style="display:flex; justify-content:space-between; align-items:center;">
-                    <button onclick="showStep(2)" style="background:none; border:none; cursor:pointer; color:var(--primary); font-weight:bold;">← ফিল্টার বদলান</button>
-                    <button class="btn-action" style="background:#25D366; color:#fff;" onclick="openModal('uploadModal')">➕ নতুন বায়োডাটা যুক্ত করুন</button>
-                </div>
-                <hr style="margin:15px 0;">
-                
-                <!-- Infinite Feed Container -->
-                <div id="feedContainer"></div>
+        <!-- ৪০০+ পজিটিভ রিভিউ -->
+        <div class="card">
+            <h3>⭐ ৪০০+ পজিটিভ রিভিউ ও সফল দম্পতি</h3>
+            <p style="font-size: 13px;"><strong>রেটিং: ★★★★★ (৪.৯/৫)</strong></p>
+            <div style="border-top: 1px solid #eee; padding-top: 8px; margin-top: 4px; font-size: 12px;">
+                <p><em>"মাত্র ১৫ দিনে দ্বীনদার জীবনসঙ্গী পেয়েছি। ধন্যবাদ কামরুল হাসান ভাইকে।"</em> — আরিফুল ইসলাম</p>
+                <p><em>"ব্লার প্রাইভেসি ফিচার থাকার কারণে অভিভাবকরা খুবই সন্তুষ্ট।"</em> — খাদিজা আক্তার</p>
             </div>
+        </div>
+
+        <!-- রেফারেল ও শেয়ার বোনাস -->
+        <div class="card">
+            <h3>🎁 রেফারেল ও শেয়ার বোনাস প্রোগ্রাম</h3>
+            <p style="font-size: 12px;">প্ল্যাটফর্মটি শেয়ার করে বা নতুন বন্ধুকে জয়েন করিয়ে ফ্রি আনলক পয়েন্ট অর্জন করুন।</p>
+        </div>
+
+        <!-- সিক্রেট পার্সোনাল লক এডমিন প্যানেল -->
+        <div class="card" style="border: 2px dashed var(--royal-gold);">
+            <h3>🔑 সিক্রেট পার্সোনাল এডমিন লক প্যানেল</h3>
+            <input type="password" id="adminPass" placeholder="মাস্টার পাসওয়ার্ড (Default: admin777)" style="padding: 7px; width: 55%; font-size: 12px;">
+            <button class="btn-gold" onclick="checkAdmin()">প্রবেশ</button>
         </div>
 
     </div>
 
-    <!-- Admin Panel Modal -->
-    <div id="adminModal" class="modal">
-        <div class="modal-content">
-            <span class="close-btn" onclick="closeModal('adminModal')">&times;</span>
-            <h3 style="color:var(--primary);">🔑 এডমিন সিক্রেট কন্ট্রোল</h3>
-            <label>এডমিন পাসওয়ার্ড দিন:</label>
-            <input type="password" id="adminPassInput">
-            <button class="btn-action" onclick="loginAdmin()">লগইন করুন</button>
-
-            <div id="adminControls" style="display:none; margin-top:15px; border-top:1px solid #ccc; padding-top:10px;">
-                <h4>পাসওয়ার্ড পরিবর্তন করুন:</h4>
-                <input type="password" id="newPassInput" placeholder="নতুন পাসওয়ার্ড">
-                <button class="btn-action" onclick="changeAdminPass()">পাসওয়ার্ড আপডেট করুন</button>
-                <hr>
-                <h4>পেমেন্ট ট্রানজেকশন টাইমার এপ্রুভ করুন:</h4>
-                <input type="text" id="trxIdInput" placeholder="ইউজারের TrxID / বিকাশ নম্বর">
-                <button class="btn-action" style="background:#28a745; color:#fff;" onclick="approveUserTrx()">✅ এপ্রুভ করুন ও টাইমার স্টার্ট করুন</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Upload Modal -->
-    <div id="uploadModal" class="modal">
-        <div class="modal-content">
-            <span class="close-btn" onclick="closeModal('uploadModal')">&times;</span>
-            <h3 style="color:var(--primary);">📤 গ্যালারি থেকে বায়োডাটা আপলোড</h3>
-            <input type="text" placeholder="আপনার নাম / পদবি">
-            <select>
-                <option>লক্ষ্মীপুর</option><option>চট্টগ্রাম</option><option>ঢাকা</option>
-            </select>
-            <label>গ্যালারি থেকে ছবি সিলেক্ট করুন:</label>
-            <input type="file" accept="image/*">
-            <button class="btn-action" onclick="alert('আপনার বায়োডাটা এডমিন অনুমোদনের জন্য জমা হয়েছে!'); closeModal('uploadModal');">সাবমিট করুন</button>
-        </div>
-    </div>
+    <!-- ফ্লোটিং হোয়াটসঅ্যাপ -->
+    <a href="https://wa.me/8801734883213" target="_blank" class="whatsapp-float">💬 WhatsApp</a>
 
     <footer>
-        <p>&copy; 2026 Saptapadi.bd | Managed by Kamrul Hasan (@kamrulhosen16)</p>
+        © 2026 Saptapadi.bd | Managed by Kamrul Hasan | TikTok: @kamrulhosen16
     </footer>
 
-    <script>
-        let currentAdminPass = "admin777";
-        let masterPasscode = "777";
-
-        // One click Copy Bkash Number
-        function copyBkash() {
-            let num = document.getElementById('bkashNum').innerText;
-            navigator.clipboard.writeText(num);
-            alert("বিকাশ নম্বরটি কপি হয়েছে: " + num);
-        }
-
-        // Navigation Steps
-        function showStep(s) {
-            document.getElementById('step1View').style.display = s === 1 ? 'block' : 'none';
-            document.getElementById('step2View').style.display = s === 2 ? 'block' : 'none';
-            document.getElementById('step3View').style.display = s === 3 ? 'block' : 'none';
-
-            document.getElementById('st1').className = s >= 1 ? 'active' : '';
-            document.getElementById('st2').className = s >= 2 ? 'active' : '';
-            document.getElementById('st3').className = s >= 3 ? 'active' : '';
-        }
-
-        function setSearchType(type) { showStep(2); }
-
-        // Modal Helpers
-        function openModal(id) { document.getElementById(id).style.display = 'flex'; }
-        function closeModal(id) { document.getElementById(id).style.display = 'none'; }
-
-        // Admin Auth
-        function loginAdmin() {
-            let p = document.getElementById('adminPassInput').value;
-            if(p === currentAdminPass) {
-                document.getElementById('adminControls').style.display = 'block';
-                alert("এডমিন লগইন সফল হয়েছে!");
-            } else { alert("ভুল এডমিন পাসওয়ার্ড!"); }
-        }
-
-        function changeAdminPass() {
-            let np = document.getElementById('newPassInput').value;
-            if(np) { currentAdminPass = np; alert("এডমিন পাসওয়ার্ড পরিবর্তন সফল হয়েছে!"); }
-        }
-
-        function approveUserTrx() {
-            let trx = document.getElementById('trxIdInput').value;
-            if(trx) { alert("TrxID " + trx + " এপ্রুভ হয়েছে। ইউজারের টাইমার ও আনলক কাউন্টডাউন শুরু করা হলো!"); }
-        }
-
-        // Infinite Scroll Demo Profiles Generation
-        const feed = document.getElementById('feedContainer');
-        function loadMoreProfiles(count) {
-            for(let i=1; i<=count; i++) {
-                let card = document.createElement('div');
-                card.className = 'biodata-card';
-                card.innerHTML = `
-                    <h4>ID: #SP-${Math.floor(100 + Math.random()*900)} (ভেরিফাইড বায়োডাটা)</h4>
-                    <p><strong>জেলা:</strong> লক্ষ্মীপুর / চট্টগ্রাম / ঢাকা</p>
-                    <p><strong>পেশা:</strong> চাকরিজীবী / শিক্ষক / ইঞ্জিনিয়ার</p>
-                    <p><strong>ফোন নম্বর:</strong> <span class="blur-data contact-info">0173488XXXX</span></p>
-                    <p><strong>ছবি & ঠিকানা:</strong> <span class="blur-data contact-info">[গোপনীয় ছবি ও ঠিকানা]</span></p>
-                    <button class="btn-action" onclick="unlockSingle(this)">🔓 পাসকোড দিয়ে আনলক করুন</button>
-                `;
-                feed.appendChild(card);
-            }
-        }
-        loadMoreProfiles(10); // Initial 10
-
-        // Infinite Scroll Logic
-        window.onscroll = function() {
-            if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 200) {
-                loadMoreProfiles(5); // Auto load 5 more endlessly
-            }
-        };
-
-        function unlockSingle(btn) {
-            let code = prompt("এডমিনের থেকে প্রাপ্ত পাসকোডটি দিন:");
-            if(code === masterPasscode || code === "777") {
-                let parent = btn.parentElement;
-                parent.querySelectorAll('.contact-info').forEach(el => el.classList.add('unlocked-data'));
-                btn.innerText = "✅ আনলকড";
-                btn.disabled = true;
-                alert("সফলভাবে আনলক করা হয়েছে!");
-            } else if(code !== null) { alert("ভুল পাসকোড! বিকাশ পেমেন্ট ভেরিফাই করুন।"); }
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
