@@ -4,92 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>সপ্তপদী (Saptapadi.bd) - বিশ্বস্ত ম্যাট্রিমনি ও ওয়েডিং ডিরেক্টরি</title>
-    <meta name="description" content="বাংলাদেশের ৬৪ জেলার যাচাইকৃত বায়োডাটা এবং ডেকোরেশন সার্ভিস।">
     <style>
         :root {
             --primary-color: #722F37;
             --secondary-color: #D4AF37;
             --bg-color: #F9F6F0;
-            --text-color: #333333;
             --card-bg: #FFFFFF;
         }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background: linear-gradient(135deg, var(--primary-color), #4A151B);
-            color: var(--secondary-color);
-            text-align: center;
-            padding: 20px 10px;
-            border-bottom: 4px solid var(--secondary-color);
-        }
+        body { font-family: 'Segoe UI', Arial, sans-serif; background-color: var(--bg-color); color: #333; margin: 0; padding: 0; }
+        header { background: linear-gradient(135deg, var(--primary-color), #4A151B); color: var(--secondary-color); text-align: center; padding: 20px 10px; border-bottom: 4px solid var(--secondary-color); }
         header h1 { margin: 0; font-size: 26px; }
-        header p { margin: 5px 0 0 0; color: #FFF; font-size: 13px; }
+        header p { margin: 5px 0 0; color: #fff; font-size: 13px; }
         .container { max-width: 900px; margin: 15px auto; padding: 10px; }
-        .card {
-            background: var(--card-bg);
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-            padding: 15px;
-            margin-bottom: 15px;
-            border-top: 4px solid var(--secondary-color);
-        }
-        .card h3 { color: var(--primary-color); margin-top: 0; }
-        .filter-box {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-            margin-bottom: 15px;
-        }
-        .filter-box select {
-            padding: 8px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-            flex: 1;
-            min-width: 140px;
-        }
-        .biodata-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 15px;
-        }
-        .biodata-card {
-            background: #fff;
-            border: 1px solid #e0e0e0;
-            border-radius: 8px;
-            padding: 12px;
-            position: relative;
-        }
-        .biodata-card h4 { margin: 0 0 5px 0; color: var(--primary-color); }
+        .card { background: var(--card-bg); border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.08); padding: 15px; margin-bottom: 15px; border-top: 4px solid var(--secondary-color); }
+        .card h3 { color: var(--primary-color); margin-top: 0; border-bottom: 2px solid var(--bg-color); padding-bottom: 5px; }
+        .bkash-box { background: #FDF2F4; border: 1px dashed var(--primary-color); padding: 12px; border-radius: 8px; font-size: 14px; margin-top: 10px; }
+        .filter-box { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 15px; }
+        .filter-box select, .filter-box input { padding: 9px; border-radius: 5px; border: 1px solid #ccc; flex: 1; min-width: 140px; font-size: 14px; }
+        .biodata-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 15px; }
+        .biodata-card { background: #fff; border: 1px solid #e0e0e0; border-radius: 8px; padding: 12px; position: relative; }
+        .biodata-card h4 { margin: 0 0 5px; color: var(--primary-color); }
         .biodata-card p { margin: 4px 0; font-size: 13px; color: #555; }
-        .blur-text { filter: blur(5px); user-select: none; color: #888; }
-        .btn {
-            background-color: var(--secondary-color);
-            color: #000;
-            font-weight: bold;
-            border: none;
-            padding: 8px 12px;
-            border-radius: 5px;
-            cursor: pointer;
-            text-decoration: none;
-            display: inline-block;
-            margin-top: 8px;
-            font-size: 13px;
-        }
+        .blur-info { filter: blur(5px); user-select: none; color: #888; background: #eee; padding: 2px 5px; border-radius: 4px; }
+        .unlocked-info { filter: none !important; background: #e8f5e9 !important; color: #2e7d32 !important; font-weight: bold; }
+        .btn { background-color: var(--secondary-color); color: #000; font-weight: bold; border: none; padding: 8px 12px; border-radius: 5px; cursor: pointer; text-decoration: none; display: inline-block; margin-top: 8px; font-size: 13px; }
+        .btn:hover { opacity: 0.9; }
         .whatsapp-btn { background-color: #25D366; color: #FFF; }
-        .bkash-box {
-            background: #FDF2F4;
-            border: 1px dashed var(--primary-color);
-            padding: 10px;
-            border-radius: 6px;
-            font-size: 13px;
-            margin-top: 10px;
-        }
-        footer { text-align: center; padding: 15px; background: #333; color: #FFF; font-size: 12px; }
+        .directory-item { background: #fdfdfd; border-left: 4px solid var(--secondary-color); padding: 8px 12px; margin-bottom: 8px; border-radius: 4px; }
+        footer { text-align: center; padding: 15px; background: #333; color: #FFF; font-size: 12px; margin-top: 20px; }
     </style>
 </head>
 <body>
@@ -107,100 +49,158 @@
             <p>আমাদের বিকাশ পার্সোনাল নম্বর: <strong>01734883213</strong> (Send Money করুন)</p>
             <div class="bkash-box">
                 <strong>প্যাকেজসমূহ:</strong><br>
-                • ১৫ টাকা — ১ দিন (৩টি আনলক)<br>
-                • ৫০ টাকা — ৭ দিন (১০টি আনলক)<br>
-                • ২৩৯ টাকা — ১ মাস (৩০টি আনলক)<br>
-                পেমেন্ট করে ট্রানজেকশন আইডি সহ হোয়াটসঅ্যাপে নক করলে ইনস্ট্যান্ট পাসকোড পেয়ে যাবেন!
+                • <strong>১৫ টাকা:</strong> ১ দিন (৩টি বায়োডাটা আনলক)<br>
+                • <strong>৫০ টাকা:</strong> ৭ দিন (১০টি বায়োডাটা আনলক)<br>
+                • <strong>২৩৯ টাকা:</strong> ১ মাস (৩০টি বায়োডাটা আনলক)<br>
+                • <strong>৫৯৯ টাকা:</strong> ৩ মাস (১০০টি বায়োডাটা আনলক)<br><br>
+                <em>পেমেন্ট করার পর ট্রানজেকশন আইডি সহ হোয়াটসঅ্যাপে মেসেজ পাঠালে তাতক্ষণিক আনলক পাসকোড পাবেন।</em>
             </div>
-            <a href="https://wa.me/8801734883213?text=Assalamu%20Alaikum,%20I%20want%20to%20get%20passcode%20via%20Bkash" class="btn whatsapp-btn" target="_blank">💬 বিকাশ পেমেন্ট করতে হোয়াটসঅ্যাপে যান</a>
+            <a href="https://wa.me/8801734883213?text=Assalamu%20Alaikum,%20I%20sent%20payment%20via%20Bkash" class="btn whatsapp-btn" target="_blank">💬 বিকাশ পেমেন্ট করে পাসকোড নিন</a>
         </div>
 
-        <!-- Filter Section -->
+        <!-- Filter & Search Section -->
         <div class="card">
-            <h3>🔍 জেলা ও ক্যাটাগরি অনুযায়ী বায়োডাটা খুঁজুন</h3>
+            <h3>🔍 ৬৪ জেলার পাত্র-পাত্রীর বায়োডাটা ফিল্টার</h3>
             <div class="filter-box">
-                <select id="districtFilter" onchange="filterBiodata()">
-                    <option value="all">সকল জেলা (64 Districts)</option>
-                    <option value="Lakshmipur">লক্ষ্মীপুর</option>
-                    <option value="Chittagong">চট্টগ্রাম</option>
-                    <option value="Dhaka">ঢাকা</option>
-                    <option value="Sylhet">সিলেট</option>
+                <select id="districtFilter" onchange="filterData()">
+                    <option value="all">সকল জেলা (৬৪ জেলা)</option>
+                    <option value="লক্ষ্মীপুর">লক্ষ্মীপুর</option>
+                    <option value="চট্টগ্রাম">চট্টগ্রাম</option>
+                    <option value="ঢাকা">ঢাকা</option>
+                    <option value="সিলেট">সিলেট</option>
+                    <option value="কুমিল্লা">কুমিল্লা</option>
+                    <option value="রাজশাহী">রাজশাহী</option>
+                    <option value="বরিশাল">বরিশাল</option>
+                    <option value="খুলনা">খুলনা</option>
                 </select>
-                <select id="typeFilter" onchange="filterBiodata()">
-                    <option value="all">পাত্র ও পাত্রী উভয়</option>
+                <select id="typeFilter" onchange="filterData()">
+                    <option value="all">উভয় (পাত্র ও পাত্রী)</option>
                     <option value="groom">পাত্রের বায়োডাটা</option>
                     <option value="bride">পাত্রীর বায়োডাটা</option>
                 </select>
             </div>
 
-            <!-- Biodata List Grid (300+ Sample Database Structure) -->
-            <div class="biodata-grid" id="biodataContainer">
-                <div class="biodata-card" data-district="Lakshmipur" data-type="groom">
+            <!-- Biodata Grid (Sample List from 300+ Database) -->
+            <div class="biodata-grid" id="biodataList">
+                
+                <!-- Profile 1 -->
+                <div class="biodata-card" data-district="লক্ষ্মীপুর" data-type="groom">
                     <h4>ID: #SP-101 (পাত্র)</h4>
                     <p><strong>জেলা:</strong> লক্ষ্মীপুর</p>
-                    <p><strong>পেশা:</strong> চাকরিজীবী</p>
-                    <p><strong>শিক্ষাগত যোগ্যতা:</strong> স্নাতক</p>
-                    <p><strong>মোবাইল/যোগাযোগ:</strong> <span class="blur-text">017XXXXXXXX</span></p>
-                    <button class="btn" onclick="alert('পাসকোড দিয়ে আনলক করুন অথবা হোয়াটসঅ্যাপে যোগাযোগ করুন!')">🔓 পাসকোড দিয়ে আনলক করুন</button>
+                    <p><strong>পেশা:</strong> টেক্সটাইল ইঞ্জিনিয়ার / গার্মেন্টস ম্যানেজার</p>
+                    <p><strong>বয়স:</strong> ২৫ বছর | <strong>উচ্চতা:</strong> ৫' ৭"</p>
+                    <p><strong>যোগাযোগ:</strong> <span class="blur-info secret-info">0173488XXXX</span></p>
+                    <button class="btn" onclick="unlockProfile(this)">🔓 পাসকোড দিয়ে আনলক করুন</button>
                 </div>
 
-                <div class="biodata-card" data-district="Chittagong" data-type="bride">
+                <!-- Profile 2 -->
+                <div class="biodata-card" data-district="চট্টগ্রাম" data-type="bride">
                     <h4>ID: #SP-102 (পাত্রী)</h4>
                     <p><strong>জেলা:</strong> চট্টগ্রাম</p>
-                    <p><strong>পেশা:</strong> শিক্ষক</p>
-                    <p><strong>শিক্ষাগত যোগ্যতা:</strong> মাস্টার্স</p>
-                    <p><strong>মোবাইল/যোগাযোগ:</strong> <span class="blur-text">018XXXXXXXX</span></p>
-                    <button class="btn" onclick="alert('পাসকোড দিয়ে আনলক করুন অথবা হোয়াটসঅ্যাপে যোগাযোগ করুন!')">🔓 পাসকোড দিয়ে আনলক করুন</button>
+                    <p><strong>পেশা:</strong> সরকারি প্রাথমিক শিক্ষিকা</p>
+                    <p><strong>বয়স:</strong> ২২ বছর | <strong>উচ্চতা:</strong> ৫' ৩"</p>
+                    <p><strong>যোগাযোগ:</strong> <span class="blur-info secret-info">01819XXXXXX</span></p>
+                    <button class="btn" onclick="unlockProfile(this)">🔓 পাসকোড দিয়ে আনলক করুন</button>
                 </div>
 
-                <div class="biodata-card" data-district="Dhaka" data-type="groom">
+                <!-- Profile 3 -->
+                <div class="biodata-card" data-district="ঢাকা" data-type="groom">
                     <h4>ID: #SP-103 (পাত্র)</h4>
                     <p><strong>জেলা:</strong> ঢাকা</p>
-                    <p><strong>পেশা:</strong> ব্যবসায়ী</p>
-                    <p><strong>শিক্ষাগত যোগ্যতা:</strong> বিএসসি</p>
-                    <p><strong>মোবাইল/যোগাযোগ:</strong> <span class="blur-text">019XXXXXXXX</span></p>
-                    <button class="btn" onclick="alert('পাসকোড দিয়ে আনলক করুন অথবা হোয়াটসঅ্যাপে যোগাযোগ করুন!')">🔓 পাসকোড দিয়ে আনলক করুন</button>
+                    <p><strong>পেশা:</strong> সফটওয়্যার ডেভেলপার</p>
+                    <p><strong>বয়স:</strong> ২৭ বছর | <strong>উচ্চতা:</strong> ৫' ৯"</p>
+                    <p><strong>যোগাযোগ:</strong> <span class="blur-info secret-info">01911XXXXXX</span></p>
+                    <button class="btn" onclick="unlockProfile(this)">🔓 পাসকোড দিয়ে আনলক করুন</button>
                 </div>
 
-                <div class="biodata-card" data-district="Sylhet" data-type="bride">
+                <!-- Profile 4 -->
+                <div class="biodata-card" data-district="লক্ষ্মীপুর" data-type="bride">
                     <h4>ID: #SP-104 (পাত্রী)</h4>
-                    <p><strong>জেলা:</strong> সিলেট</p>
-                    <p><strong>পেশা:</strong> ডাক্তার</p>
-                    <p><strong>শিক্ষাগত যোগ্যতা:</strong> এমবিবিএস</p>
-                    <p><strong>মোবাইল/যোগাযোগ:</strong> <span class="blur-text">016XXXXXXXX</span></p>
-                    <button class="btn" onclick="alert('পাসকোড দিয়ে আনলক করুন অথবা হোয়াটসঅ্যাপে যোগাযোগ করুন!')">🔓 পাসকোড দিয়ে আনলক করুন</button>
+                    <p><strong>জেলা:</strong> লক্ষ্মীপুর</p>
+                    <p><strong>পেশা:</strong> গৃহিনী / অনার্স ফাইনাল ইয়ার</p>
+                    <p><strong>বয়স:</strong> ২১ বছর | <strong>উচ্চতা:</strong> ৫' ২"</p>
+                    <p><strong>যোগাযোগ:</strong> <span class="blur-info secret-info">01712XXXXXX</span></p>
+                    <button class="btn" onclick="unlockProfile(this)">🔓 পাসকোড দিয়ে আনলক করুন</button>
                 </div>
+
+                <!-- Profile 5 -->
+                <div class="biodata-card" data-district="সিলেট" data-type="groom">
+                    <h4>ID: #SP-105 (পাত্র)</h4>
+                    <p><strong>জেলা:</strong> সিলেট</p>
+                    <p><strong>পেশা:</strong> ব্যবসায়ী (রেস্টুরেন্ট প্রোপাইটর)</p>
+                    <p><strong>বয়স:</strong> ২৮ বছর | <strong>উচ্চতা:</strong> ৫' ৮"</p>
+                    <p><strong>যোগাযোগ:</strong> <span class="blur-info secret-info">01670XXXXXX</span></p>
+                    <button class="btn" onclick="unlockProfile(this)">🔓 পাসকোড দিয়ে আনলক করুন</button>
+                </div>
+
             </div>
         </div>
 
-        <!-- Free Reward Section -->
+        <!-- Free Social Reward Policy -->
         <div class="card">
-            <h3>🎁 ৮০+ লাইকে ফ্রি বায়োডাটা আনলক</h3>
-            <p>ফেসবুক বা টিকটকে আমাদের প্ল্যাটফর্ম শেয়ার করে ৮০+ লাইক বা স্ক্রিনশট পাঠালে ফ্রি পাসকোড পাবেন।</p>
-            <a href="https://wa.me/8801734883213?text=Assalamu%20Alaikum,%20I%20sent%20screenshot%20for%20free%20unlock" class="btn whatsapp-btn" target="_blank">💬 স্ক্রিনশট পাঠান</a>
+            <h3>🎁 ৮০+ লাইকে ফ্রি বায়োডাটা আনলক!</h3>
+            <p>আমাদের প্ল্যাটফর্মের পোস্ট ফেসবুকে বা টিকটকে শেয়ার করে ৮০+ লাইক পাওয়ার স্ক্রিনশট পাঠালে ২৪ ঘণ্টার জন্য ফ্রি ১টি বায়োডাটা আনলক পাসকোড পাবেন।</p>
+            <a href="https://wa.me/8801734883213?text=Assalamu%20Alaikum,%20I%20have%20sent%20screenshot%20for%20free%20unlock" class="btn whatsapp-btn" target="_blank">💬 স্ক্রিনশট পাঠাতে এখানে ক্লিক করুন</a>
+        </div>
+
+        <!-- Decoration Directory (Barter Policy) -->
+        <div class="card">
+            <h3>🎉 ডেকোরেশন ও সাউন্ড সার্ভিস ডিরেক্টরি</h3>
+            <p>লক্ষ্মীপুর, চট্টগ্রাম ও ঢাকাসহ সারা দেশের সেরা ডেকোরেশন ও স্টেজ সার্ভিস লাইটিং তালিকা:</p>
+            
+            <div class="directory-item">
+                <strong>রয়্যাল ডেকোরেটর & ইভেন্ট</strong> (লক্ষ্মীপুর) - বিয়ে, হলুদ ও সাউন্ড সিস্টেম ডিল।
+            </div>
+            <div class="directory-item">
+                <strong>চাটগাঁ ওয়েডিং সার্ভিস</strong> (চট্টগ্রাম) - লাইটিং, সাউন্ড ও ক্যাটারিং ব্যবস্থাপনা।
+            </div>
+
+            <p style="font-size: 13px; color: #666; margin-top: 10px;"><em>(বার্টার পলিসি: ডেকোরেশন ব্যবসায়ীরা ফ্রিতে বিজ্ঞাপন যুক্ত করতে আমাদের প্রচার করুন)</em></p>
+            <a href="https://wa.me/8801734883213?text=Assalamu%20Alaikum,%20I%20want%20to%20add%20my%20decoration%20business%20directory" class="btn whatsapp-btn" target="_blank">📢 ফ্রিতে ডেকোরেশন সার্ভিস লিস্ট করুন</a>
         </div>
 
     </div>
 
     <footer>
-        <p>&copy; 2026 Saptapadi.bd | Developed for Kamrul Hasan (@kamrulhosen16)</p>
+        <p>&copy; 2026 Saptapadi.bd | Managed by Kamrul Hasan (@kamrulhosen16)</p>
     </footer>
 
     <script>
-        function filterBiodata() {
-            let district = document.getElementById('districtFilter').value;
+        // Filter logic for 64 districts & Grooms/Brides
+        function filterData() {
+            let dist = document.getElementById('districtFilter').value;
             let type = document.getElementById('typeFilter').value;
             let cards = document.querySelectorAll('.biodata-card');
 
-            cards.forEach(card => {
-                let dMatch = (district === 'all' || card.getAttribute('data-district') === district);
-                let tMatch = (type === 'all' || card.getAttribute('data-type') === type);
+            cards.forEach(c => {
+                let dMatch = (dist === 'all' || c.getAttribute('data-district') === dist);
+                let tMatch = (type === 'all' || c.getAttribute('data-type') === type);
                 if(dMatch && tMatch) {
-                    card.style.display = 'block';
+                    c.style.display = 'block';
                 } else {
-                    card.style.display = 'none';
+                    c.style.display = 'none';
                 }
             });
+        }
+
+        // Secret Passcode Unlock Function
+        function unlockProfile(btnElement) {
+            let userCode = prompt("অনুগ্রহ করে আপনার প্রাপ্ত প্রিমিয়াম পাসকোডটি লিখুন:");
+            
+            // Default master passcode logic (App Admin can share '777' or 'SAPTAPADI')
+            if (userCode === "777" || userCode === "saptapadi" || userCode === "SAPTAPADI") {
+                let card = btnElement.parentElement;
+                let blurSpan = card.querySelector('.secret-info');
+                blurSpan.classList.add('unlocked-info');
+                blurSpan.innerText = "01734883213 (আনলকড!)";
+                btnElement.innerText = "✅ সফলভাবে আনলক হয়েছে";
+                btnElement.style.backgroundColor = "#2e7d32";
+                btnElement.style.color = "#fff";
+                btnElement.disabled = true;
+                alert("অভিনন্দন! বায়োডাটার যোগাযোগ নম্বর সফলভাবে আনলক হয়েছে।");
+            } else if (userCode !== null) {
+                alert("দুঃখিত, ভুল পাসকোড! বিকাশ পেমেন্ট করে অথবা ফেসবুকে শেয়ার করে সঠিক পাসকোড সংগ্রহ করুন।");
+            }
         }
     </script>
 </body>
