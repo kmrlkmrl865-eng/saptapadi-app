@@ -531,3 +531,144 @@
 
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>সপ্তপদী (Saptapadi.bd) - লাইভ ভয়েস পার্টি ও সুপার অ্যাপ</title>
+    <style>
+        :root {
+            --royal-gold: #d4af37;
+            --bkash-pink: #e2136e;
+            --primary-purple: #7c3aed;
+            --dark-bg: #070a12;
+            --card-bg: #131b2e;
+            --border-color: #1f293d;
+            --text-main: #f9fafb;
+            --text-muted: #9ca3af;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, sans-serif; }
+        body { background-color: var(--dark-bg); color: var(--text-main); display: flex; justify-content: center; }
+
+        .app-container {
+            width: 100%; max-width: 480px; min-height: 100vh;
+            background: #0b0f19; border-left: 1px solid var(--border-color);
+            border-right: 1px solid var(--border-color); position: relative; padding-bottom: 80px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #131b2e, #0b0f19);
+            padding: 15px; text-align: center; border-bottom: 2px solid var(--royal-gold);
+            position: sticky; top: 0; z-index: 100;
+        }
+        header h1 { font-size: 20px; color: var(--royal-gold); margin-bottom: 2px; }
+        .credits { font-size: 11px; color: #f472b6; }
+
+        .container { padding: 12px; display: flex; flex-direction: column; gap: 12px; }
+
+        .card {
+            background: var(--card-bg); border: 1px solid var(--border-color);
+            border-radius: 12px; padding: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+        }
+        .card h3 { font-size: 14px; color: #fff; margin-bottom: 8px; display: flex; align-items: center; gap: 6px; }
+
+        /* ভয়েস পার্টি রুম স্টাইল */
+        .party-room-header {
+            background: linear-gradient(135deg, #1e1b4b, #31102f);
+            border: 1px solid var(--primary-purple); border-radius: 12px; padding: 12px;
+        }
+        .mic-grid {
+            display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-top: 10px; text-align: center;
+        }
+        .mic-slot {
+            background: #1f293d; border: 2px dashed #4b5563; border-radius: 50%;
+            width: 55px; height: 55px; margin: 0 auto; display: flex; flex-direction: column;
+            align-items: center; justify-content: center; cursor: pointer; position: relative;
+        }
+        .mic-slot.active { border-style: solid; border-color: #34d399; background: rgba(52, 211, 153, 0.15); }
+        .mic-slot span { font-size: 18px; }
+        .mic-label { font-size: 10px; color: #9ca3af; margin-top: 4px; text-align: center; }
+
+        .search-box {
+            width: 100%; padding: 8px 10px; background: #070a12; border: 1px solid var(--royal-gold);
+            border-radius: 6px; color: #fff; font-size: 12px; margin-top: 6px;
+        }
+
+        .game-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 8px; }
+        .game-btn {
+            background: #1f293d; border: 1px solid #374151; border-radius: 8px; padding: 10px;
+            text-align: center; cursor: pointer; font-size: 12px; color: #fff; transition: 0.2s;
+        }
+        .game-btn:hover { border-color: var(--royal-gold); background: rgba(212, 175, 55, 0.1); }
+
+        .chat-stream {
+            background: #070a12; border-radius: 8px; padding: 8px; height: 110px; overflow-y: auto; font-size: 11px; color: #cbd5e1;
+        }
+
+        .btn-action {
+            background: var(--primary-purple); color: #fff; border: none; padding: 8px 12px;
+            border-radius: 6px; font-weight: bold; font-size: 12px; cursor: pointer; width: 100%; margin-top: 8px;
+        }
+
+        .admin-view { display: none; background: #1e1b4b; border: 1px solid var(--primary-purple); padding: 12px; border-radius: 10px; margin-top: 10px; }
+    </style>
+</head>
+<body onload="initApp()">
+
+<div class="app-container">
+
+    <!-- হেডার -->
+    <header>
+        <h1>সপ্তপদী (Saptapadi.bd)</h1>
+        <div class="credits">রিয়েল-টাইম ভয়েস পার্টি ও সুপার অ্যাপ (রুপকার: কামরুল হাসান)</div>
+    </header>
+
+    <div class="container">
+
+        <!-- ১. লাইভ ভয়েস পার্টি রুম -->
+        <div class="card party-room-header">
+            <h3>🎙️ লাইভ ভয়েস পার্টি রুম (১৫-২০ জন স্পিকার)</h3>
+            <p style="font-size:11px; color:#cbd5e1;">মাইকে ক্লিক করে স্পিকার হিসেবে যুক্ত হোন অথবা আইডি দিয়ে কাউকে ডেকে আনুন।</p>
+            
+            <div class="mic-grid">
+                <div>
+                    <div class="mic-slot active" onclick="toggleMic(1)" id="mic1"><span>🗣️</span></div>
+                    <div class="mic-label">১. কামরুল (Host)</div>
+                </div>
+                <div>
+                    <div class="mic-slot" onclick="toggleMic(2)" id="mic2"><span>🎙️</span></div>
+                    <div class="mic-label">২. খালি মাইক</div>
+                </div>
+                <div>
+                    <div class="mic-slot" onclick="toggleMic(3)" id="mic3"><span>🎙️</span></div>
+                    <div class="mic-label">৩. খালি মাইক</div>
+                </div>
+                <div>
+                    <div class="mic-slot" onclick="toggleMic(4)" id="mic4"><span>🎙️</span></div>
+                    <div class="mic-label">৪. খালি মাইক</div>
+                </div>
+            </div>
+
+            <!-- আইডি দিয়ে স্পিকার ডেকে আনার বক্স -->
+            <div style="margin-top: 12px;">
+                <input type="text" id="inviteIdInput" class="search-box" placeholder="ইউজার আইডি লিখুন (যেমন: #5948017) এবং মাইকে ডাকুন...">
+                <button class="btn-action" style="background:#10b981;" onclick="inviteUserToMic()">🔍 আইডি সার্চ করে মাইকে আনুন</button>
+            </div>
+        </div>
+
+        <!-- ২. রিয়েল লাইভ অডিও স্ট্রিম ও চ্যাট বক্স -->
+        <div class="card">
+            <h3>💬 লাইভ রুম চ্যাট ও ডিসকাশন</h3>
+            <div class="chat-stream" id="chatStreamBox">
+                <div>[সিস্টেম]: ভয়েস রুমে সবাইকে স্বাগতম! সবাই শান্তিতে কথা বলুন।</div>
+                <div>[কামরুল হাসান]: কে কে কথা বলবেন মাইকে চলে আসেন।</div>
+            </div>
+            <div style="display:flex; gap:6px; margin-top:8px;">
+                <input type="text" id="roomMessageInput" placeholder="কিছু বলুন..." style="flex:1; padding:7px; background:#070a12; border:1px solid #374151; border-radius:6px; color:#fff; font-size:11px;">
+                <button onclick="sendRoomMessage()" style="background:var(--primary-purple); color:#fff; border:none; padding:7px 12px; border-radius:6px; font-size:11px; cursor:pointer;">পাঠান</button>
+            </div>
+        </div>
+
+        <!-- ৩. ফ্রি মিনি গেম কর্নার -->
+        
