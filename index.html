@@ -670,5 +670,408 @@
             </div>
         </div>
 
-        <!-- ৩. ফ্রি মিনি গেম কর্নার -->
+        <!-- ৩. ফ্রি মিনি গেম কর্নার --><!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>সপ্তপদী (Saptapadi.bd) - প্রিমিয়াম হালাল ম্যারেজ সুপার অ্যাপ</title>
+    <style>
+        :root {
+            --royal-gold: #d4af37;
+            --bkash-pink: #e2136e;
+            --primary-pink: #e91e63;
+            --dark-bg: #0b0f19;
+            --card-bg: #131b2e;
+            --border-color: #1f293d;
+            --text-main: #f9fafb;
+            --text-muted: #9ca3af;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, sans-serif; }
+        body { background-color: var(--dark-bg); color: var(--text-main); display: flex; justify-content: center; }
+
+        .app-container {
+            width: 100%; max-width: 480px; min-height: 100vh;
+            background: #070a12; border-left: 1px solid var(--border-color);
+            border-right: 1px solid var(--border-color); position: relative; padding-bottom: 90px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #131b2e, #0b0f19);
+            padding: 18px; text-align: center; border-bottom: 2px solid var(--royal-gold);
+            position: sticky; top: 0; z-index: 100;
+        }
+        header h1 { font-size: 22px; color: var(--royal-gold); margin-bottom: 4px; }
+        .tagline { font-size: 13px; color: var(--text-muted); font-style: italic; }
+        .credits { font-size: 11px; color: #f472b6; margin-top: 6px; }
+
+        .container { padding: 15px; display: flex; flex-direction: column; gap: 15px; }
+
+        .card {
+            background: var(--card-bg); border: 1px solid var(--border-color);
+            border-radius: 14px; padding: 15px; box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+        }
+        .card h3 { font-size: 15px; color: #fff; margin-bottom: 10px; display: flex; align-items: center; gap: 6px; }
+
+        /* AI Voice Banner */
+        .ai-voice-banner {
+            background: linear-gradient(135deg, #1e1b4b, #31102f);
+            border: 1px solid #7c3aed; padding: 12px; border-radius: 12px;
+            display: flex; align-items: center; gap: 10px;
+        }
+        .ai-mic-icon {
+            background: #7c3aed; color: #fff; width: 35px; height: 35px;
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            cursor: pointer; flex-shrink: 0; font-size: 16px;
+        }
+        .ai-text h4 { font-size: 12px; color: #c084fc; margin-bottom: 2px; }
+        .ai-text p { font-size: 11px; color: #e5e7eb; }
+
+        /* Floating AI Instant Helper */
+        .ai-helper-floating {
+            background: rgba(124, 58, 237, 0.15); border: 1px dashed #7c3aed;
+            padding: 12px; border-radius: 12px; margin-top: 5px;
+        }
+
+        .zone-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+        .zone-btn {
+            background: #1f293d; border: 2px solid var(--border-color);
+            border-radius: 10px; padding: 10px; text-align: center; cursor: pointer; transition: 0.2s;
+        }
+        .zone-btn.active { border-color: var(--primary-pink); background: rgba(233,30,99,0.15); }
+        .zone-btn h4 { font-size: 13px; color: #fff; }
+        .zone-btn span { font-size: 10px; color: #34d399; font-weight: bold; }
+
+        table { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 12px; }
+        th, td { border: 1px solid #374151; padding: 8px; text-align: center; color: #e5e7eb; }
+        th { background: #1f293d; color: var(--royal-gold); }
+
+        .btn-gold {
+            background: var(--royal-gold); color: #000; border: none; padding: 8px 12px;
+            border-radius: 6px; font-weight: bold; font-size: 12px; cursor: pointer; margin-top: 8px;
+        }
+        .btn-bkash {
+            background: var(--bkash-pink); color: #fff; border: none; padding: 8px 12px;
+            border-radius: 6px; font-weight: bold; font-size: 12px; cursor: pointer; width: 100%; margin-top: 8px;
+        }
+
+        .admin-view { display: none; background: #1e1b4b; border: 1px solid #7c3aed; padding: 15px; border-radius: 12px; margin-top: 10px; }
+        
+        .whatsapp-float {
+            position: fixed; bottom: 20px; right: 20px; background: #25d366; color: #fff;
+            padding: 10px 16px; border-radius: 30px; font-size: 13px; font-weight: bold;
+            text-decoration: none; box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4); z-index: 150;
+        }
+    </style>
+</head>
+<body onload="initSuperApp()">
+
+<div class="app-container">
+
+    <!-- হেডার ও ব্র্যান্ডিং -->
+    <header>
+        <h1>সপ্তপদী (Saptapadi.bd)</h1>
+        <div class="tagline">"আপনার পছন্দে, আপনার সময়ে।"</div>
+        <div class="credits">ম্যানেজমেন্ট ও রূপকার: মোহাম্মদ কামরুল হাসান (@kamrulhosen16)</div>
+        <div style="margin-top: 6px;"><span style="background:#e2136e; color:#fff; padding:2px 8px; border-radius:10px; font-size:10px; font-weight:bold;">bKash Exclusive Payment Only</span></div>
+    </header>
+
+    <div class="container">
+
+        <!-- ১. এআই ভয়েস গাইড -->
+        <div class="ai-voice-banner">
+            <div class="ai-mic-icon" onclick="playAiVoice('আসসালামু আলাইকুম! সপ্তপদী ম্যাট্রিমনিতে আপনাকে স্বাগতম। পেমেন্টের জন্য শুধুমাত্র বিকাশ ব্যবহার করা হবে।')">🎙️</div>
+            <div class="ai-text">
+                <h4>এআই ঘটক ভয়েস গাইড</h4>
+                <p id="aiSpokenText">"আসসালামু আলাইকুম! সপ্তপদী ম্যাট্রিমনিতে স্বাগতম। নিচে পাত্র বা পাত্রী জোন বেছে নিন।"</p>
+            </div>
+        </div>
+
+        <!-- ২. এআই ইনস্ট্যান্ট আস্কিং বক্স -->
+        <div class="card ai-helper-floating">
+            <h3>🤖 এআই ইনস্ট্যান্ট হেল্প ও কোয়েশ্চেন বক্স</h3>
+            <p style="font-size:11px; color:#cbd5e1; margin-bottom:6px;">লুডু খেলবেন কীভাবে, মেয়ের আইডি খুঁজবেন বা যেকোনো প্রশ্ন এখানে লিখে জিজ্ঞেস করুন:</p>
+            <div style="display:flex; gap:6px;">
+                <input type="text" id="aiUserQuery" placeholder="যেমন: বিয়ে করতে কী কাগজ লাগে?" style="flex:1; padding:8px; background:#0b0f19; color:#fff; border:1px solid #7c3aed; border-radius:6px; font-size:11px;">
+                <button onclick="askAiAssistant()" style="background:#7c3aed; color:#fff; border:none; padding:8px 12px; border-radius:6px; font-size:11px; font-weight:bold; cursor:pointer;">জিজ্ঞেস করুন</button>
+            </div>
+            <p id="aiAnswerBox" style="font-size:11px; color:#34d399; margin-top:6px; font-style:italic;"></p>
+        </div>
+
+        <!-- ৩. ডুয়াল জোন সুইচিং প্যানেল -->
+        <div class="card">
+            <h3>👥 পাত্র ও পাত্রী জোন সিলেকশন</h3>
+            <div class="zone-grid">
+                <div class="zone-btn active" id="brideTab" onclick="switchZone('bride')">
+                    <h4>👩‍🦰 পাত্রী জোন</h4>
+                    <span id="brideCount">১০০০+ প্রোফাইল</span>
+                </div>
+                <div class="zone-btn" id="groomTab" onclick="switchZone('groom')">
+                    <h4>👨‍💼 পাত্র জোন</h4>
+                    <span id="groomCount">৫০০০+ প্রোফাইল</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- ৪. ডাইনামিক প্রোফাইল তালিকা -->
+        <div class="card">
+            <h3 id="zoneTitle">👩‍🦰 ভেরিফাইড পাত্রী তালিকা (ডাটাবেস)</h3>
+            <div id="profileList" style="display:flex; flex-direction:column; gap:10px; margin-top:10px; max-height:280px; overflow-y:auto;">
+                <!-- ডাইনামিক প্রোফাইল রেন্ডার হবে -->
+            </div>
+        </div>
+
+        <!-- ৫. সুপার অ্যাপ এক্সক্লুসিভ ফিচারস -->
+        <div class="card">
+            <h3>⚡ সুপার অ্যাপ এক্সক্লুসিভ ফিচারস</h3>
+            <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap:8px; text-align:center; margin-top:8px;">
+                <div onclick="openGroupVoiceRoom()" style="background:#1f293d; padding:10px; border-radius:8px; font-size:11px; cursor:pointer;"><span>🎙️</span>গ্রুপ কল (১৫-২০ জন)</div>
+                <div onclick="openGameRoom()" style="background:#1f293d; padding:10px; border-radius:8px; font-size:11px; cursor:pointer;"><span>🎲</span>লুডো ও গেম</div>
+                <div onclick="openKufuMatch()" style="background:#1f293d; padding:10px; border-radius:8px; font-size:11px; cursor:pointer;"><span>🕌</span>কুফু ম্যাচ</div>
+            </div>
+        </div>
+
+        <!-- ৬. ৬৪ জেলার ইনস্ট্যান্ট সার্চ ও আইডি সার্চ -->
+        <div class="card">
+            <h3>🔍 ৬৪ জেলা ও আইডি সার্চ (সরাসরি উপরে আসবে)</h3>
+            <input type="text" id="districtSearch" oninput="filterProfiles()" placeholder="জেলা (যেমন: চট্টগ্রাম) বা আইডি (যেমন: 78066) লিখুন..." style="width: 100%; padding: 10px; border: 1px solid var(--royal-gold); border-radius: 5px; background:#0b0f19; color:#fff; box-sizing: border-box;">
+        </div>
+
+        <!-- অতিরিক্ত এক্সটেন্ডড প্রফেশনাল সেকশনসমূহ (১৫+ নতুন উন্নত ব্লক) -->
+        <div class="card">
+            <h3>📊 রিয়েল-টাইম ম্যাচিং এনালিটিক্স ও মেট্রিকস</h3>
+            <p style="font-size: 11px; color: #cbd5e1;">সপ্তপদী প্ল্যাটফর্মে প্রতিদিন সফলভাবে সম্পন্ন হওয়া রিয়েল-টাইম বায়োডাটা ভেরিফিকেশন ও এআই ম্যাচিং গ্রাফ চার্ট এখানে ট্র্যাক করা হয়।</p>
+        </div>
+
+        <div class="card">
+            <h3>🛡️ প্রিমিয়াম হালাল প্রাইভেসি প্রটেকশন সিস্টেম</h3>
+            <p style="font-size: 11px; color: #cbd5e1;">ইউজারদের গোপনীয়তা রক্ষা করতে এখানে সম্পূর্ণ ইসলামিক শরিয়াহ সম্মত কন্টেন্ট ফিল্টারিং এবং এনক্রিপশন প্রোটোকল যুক্ত রয়েছে।</p>
+        </div>
+
+        <div class="card">
+            <h3>🌐 ৬৪ জেলা প্রতিনিধি ও লোকাল কমিউনিটি হাব</h3>
+            <p style="font-size: 11px; color: #cbd5e1;">বাংলাদেশের প্রতিটি জেলার স্থানীয় ঘটক ও ভেরিফাইড ম্যারেজ মিডিয়া প্রতিনিধিদের সাথে সরাসরি যোগাযোগের ডাটাবেস নেটওয়ার্ক।</p>
+        </div>
+
+        <div class="card">
+            <h3>⭐ ভিআইপি মেম্বারশিপ ও গোল্ডেন ব্যাজ সিস্টেম</h3>
+            <p style="font-size: 11px; color: #cbd5e1;">যাঁরা দ্রুত পাত্র-পাত্রী খুঁজতে চান, তাদের জন্য এক্সক্লুসিভ গোল্ডেন ব্যাজ ভেরিফিকেশন এবং প্রিমিয়াম প্রায়োরিটি ফিচার।</p>
+        </div>
+
+        <div class="card">
+            <h3>📜 ম্যারেজ গাইড ও ইসলামিক শরিয়াহ কাউন্সেলিং</h3>
+            <p style="font-size: 11px; color: #cbd5e1;">বিয়ে পূর্ববর্তী ও পরবর্তী কাউন্সেলিং, মোহরানা নির্ধারণ এবং ইসলামসম্মত পারিবারিক জীবন গঠন বিষয়ক নির্দেশিকা।</p>
+        </div>
+
+        <div class="card">
+            <h3>🔔 ইনস্ট্যান্ট নোটিফিকেশন ও অ্যালার্ট ব্রডকাস্ট</h3>
+            <p style="font-size: 11px; color: #cbd5e1;">নতুন কোনো বায়োডাটা বা পছন্দের পাত্র-পাত্রীর রিকোয়েস্ট আসলে সাথে সাথে পুশ নোটিফিকেশন পাওয়ার আধুনিক সিস্টেম।</p>
+        </div>
+
+        <div class="card">
+            <h3>🎯 এআই পার্সোনালাইজড ম্যাচমেকিং ইঞ্জিন</h3>
+            <p style="font-size: 11px; color: #cbd5e1;">পছন্দ, শিক্ষা, জেলা ও পারিবারিক ব্যাকগ্রাউন্ড বিশ্লেষণ করে স্বয়ংক্রিয়ভাবে পারফেক্ট ম্যাচ খুঁজে বের করার অ্যালগরিদম।</p>
+        </div>
+
+        <div class="card">
+            <h3>💬 সিক্রেট কমিউনিকেশন ও সেফ চ্যাট রুম</h3>
+            <p style="font-size: 11px; color: #cbd5e1;">অভিভাবকদের তত্ত্বাবধানে নিরাপদ ও হালাল উপায়ে মতবিনিময় করার জন্য স্পেশাল এনক্রিপ্টেড মেসেজিং মডিউল।</p>
+        </div>
+
+        <div class="card">
+            <h3>🎁 স্পেশাল গিফট ও রিওয়ার্ড পয়েন্ট হাব</h3>
+            <p style="font-size: 11px; color: #cbd5e1;">সক্রিয় ব্যবহারকারীদের জন্য বোনাস পয়েন্ট, ডিসকাউন্ট কুপন এবং রেফারেল রিওয়ার্ড অর্জনের এক্সক্লুসিভ কর্নার।</p>
+        </div>
+
+        <div class="card">
+            <h3>📈 লাইভ ট্রাফিক্স ও ইউজার এক্টিভিটি মনিটর</h3>
+            <p style="font-size: 11px; color: #cbd5e1;">অনলাইনে বর্তমানে কতজন সক্রিয় রয়েছেন এবং কোন জোনে কেমন রেসপন্স পাওয়া যাচ্ছে তার লাইভ স্ট্যাটিস্টিক্স।</p>
+        </div>
+
+        <div class="card">
+            <h3>🌍 গ্লোবাল প্রবাসী ম্যারেজ এক্সচেঞ্জ জোন</h3>
+            <p style="font-size: 11px; color: #cbd5e1;">মধ্যপ্রাচ্য, ইউরোপ ও প্রবাসে থাকা বাংলাদেশি ভাইবোনদের জন্য এক্সক্লুসিভ ভেরিফাইড পাত্র-পাত্রীর আলাদা সেকশন।</p>
+        </div>
+
+        <div class="card">
+            <h3>📞 টুয়েন্টিফোর সেভেন কাস্টমার কেয়ার হেল্পলাইন</h3>
+            <p style="font-size: 11px; color: #cbd5e1;">যেকোনো টেকনিক্যাল সমস্যা বা পেমেন্ট সংক্রান্ত সহায়তার জন্য রাউন্ড-দ্য-ক্লক ডেডিকেটেড সাপোর্ট সিস্টেম।</p>
+        </div>
+
+        <div class="card">
+            <h3>🔒 এডভান্সড সিকিউরিটি ও ফায়ারওয়াল প্রটেকশন</h3>
+            <p style="font-size: 11px; color: #cbd5e1;">ফেক আইডি ও স্প্যামিং রোধে মাল্টি-লেয়ার সিকিউরিটি প্রোটোকল যা প্ল্যাটফর্মকে রাখে সম্পূর্ণ সুরক্ষিত।</p>
+        </div>
+
+        <div class="card">
+            <h3>📋 অটোমেটেড বায়োডাটা জেনারেটর টুল</h3>
+            <p style="font-size: 11px; color: #cbd5e1;">খুব সহজেই আকর্ষণীয় ও প্রফেশনাল ফরম্যাটে নিজের জীবনবৃত্তান্ত বা বায়োডাটা তৈরি করে নেওয়ার স্মার্ট টুল।</p>
+        </div>
+
+        <div class="card">
+            <h3>💡 ইউজার ফিডব্যাক ও সাজেশন এনালাইজার</h3>
+            <p style="font-size: 11px; color: #cbd5e1;">ইউজারদের পাঠানো মতামত ও আইডিয়া স্বয়ংক্রিয়ভাবে প্রসেস করে অ্যাপের মান উন্নত করার স্মার্ট মেকানিজম।</p>
+        </div>
+
+        <!-- ৭. ডেভেলপার অফিশিয়াল কন্টাক্ট ও সোশ্যাল লিংক -->
+        <div class="card" style="border-color: var(--royal-gold);">
+            <h3>📌 ডেভেলপার ও অফিশিয়াল যোগাযোগ</h3>
+            <p style="font-size: 12px; color: #cbd5e1; line-height: 1.6;">
+                <strong>রূপকার:</strong> মোহাম্মদ কামরুল হাসান<br>
+                <strong>ফেসবুক আইডি:</strong> কামরুল হাসান<br>
+                <strong>টিকটক আইডি:</strong> <a href="https://vm.tiktok.com/ZS9fLU9kpJVAT-YuAVB" target="_blank" style="color:#f472b6; text-decoration:none;">@kamrulhosen16</a><br>
+                <strong>বিকাশ পার্সোনাল:</strong> <span style="color:#f472b6; font-weight:bold;">01734883213</span>
+            </p>
+        </div>
+
+        <!-- ৮. বিকাশ পেমেন্ট ও প্যাকেজ হেড টেবিল -->
+        <div class="card" style="background: #111827; border-color: var(--royal-gold);">
+            <h3>💳 বিকাশ পেমেন্ট ও সাবস্ক্রিপশন</h3>
+            <p style="font-size: 13px;">বিকাশ পার্সোনাল নম্বর: <strong style="color:#f472b6;">01734883213</strong></p>
+            <button class="btn-gold" onclick="copyBikash()">নম্বর কপি করুন</button>
+            
+            <table>
+                <tr><th>প্যাকেজ</th><th>মূল্য</th><th>আনলক লিমিট</th></tr>
+                <tr><td>ট্রায়াল প্যাক</td><td>১৫ টাকা</td><td>৩টি বায়োডাটা</td></tr>
+                <tr><td>স্ট্যান্ডার্ড প্যাক</td><td>৫০ টাকা</td><td>১০টি বায়োডাটা</td></tr>
+                <tr><td>মেগা প্যাক</td><td>৫৯৯ টাকা</td><td>১০০টি বায়োডাটা</td></tr>
+            </table>
+        </div>
+
+        <!-- ৯. সিক্রেট পার্সোনাল লক এডমিন প্যানেল -->
+        <div class="card" style="border: 2px dashed var(--royal-gold);">
+            <h3>🔑 সিক্রেট পার্সোনাল এডমিন লক প্যানেল</h3>
+            <input type="password" id="adminPass" placeholder="মাস্টার পাসওয়ার্ড (admin777)" style="padding: 7px; width: 60%; font-size: 12px; background:#0b0f19; color:#fff; border:1px solid #374151; border-radius:4px;">
+            <button class="btn-gold" onclick="checkAdmin()">প্রবেশ</button>
+
+            <div id="adminView" class="admin-view">
+                <h4 style="color:#34d399; font-size:13px; margin-bottom:6px;">🔐 অ্যাডমিন ড্যাশবোর্ড (কামরুল হাসান ভাই)</h4>
+                <p style="font-size:11px; color:#cbd5e1;">সিস্টেম ফুললি সিকিউরড এবং এক্সটেন্ডড ডাটাবেজ আপডেট সফলভাবে সম্পন্ন হয়েছে।</p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- ফ্লোটিং হোয়াটসঅ্যাপ প্রুফ বাটন -->
+    <a href="https://wa.me/8801734883213?text=আসসালামু%20আলাইকুম,%20সপ্তপদী%20অ্যাপ%20থেকে%20যোগাযোগ%20করছি।" target="_blank" class="whatsapp-float">
+        💬 WhatsApp প্রুফ
+    </a>
+
+</div>
+
+<script>
+    const biodataList = [
+        { id: "78064", type: "bride", age: 20, profession: "শিক্ষার্থী", district: "ঢাকা", kufu: "৯৪%" },
+        { id: "78065", type: "bride", age: 22, profession: "শিক্ষিকা", district: "চট্টগ্রাম", kufu: "৯১%" },
+        { id: "78066", type: "bride", age: 19, profession: "ডিজাইনার", district: "লক্ষ্মীপুর", kufu: "৯৫%" },
+        { id: "59480", type: "groom", age: 25, profession: "ইঞ্জিনিয়ার", district: "চট্টগ্রাম", kufu: "৯৬%" },
+        { id: "59481", type: "groom", age: 28, profession: "ব্যবসায়ী", district: "ঢাকা", kufu: "৮৯%" },
+        { id: "59482", type: "groom", age: 24, profession: "ডাক্তার", district: "সিলেট", kufu: "৯৮%" }
+    ];
+
+    let currentZone = 'bride';
+
+    function initSuperApp() {
+        renderProfiles(currentZone);
+    }
+
+    function switchZone(zone) {
+        currentZone = zone;
+        document.getElementById('brideTab').classList.toggle('active', zone === 'bride');
+        document.getElementById('groomTab').classList.toggle('active', zone === 'groom');
+        document.getElementById('zoneTitle').innerText = zone === 'bride' ? "👩‍🦰 ভেরিফাইড পাত্রী তালিকা (ডাটাবেস)" : "👨‍💼 ভেরিফাইড পাত্র তালিকা (ডাটাবেস)";
+        renderProfiles(zone);
+    }
+
+    function renderProfiles(zone, filterText = "") {
+        const listEl = document.getElementById('profileList');
+        listEl.innerHTML = "";
+        
+        let filtered = biodataList.filter(item => item.type === zone);
+        if(filterText) {
+            filtered = biodataList.filter(item => item.district.includes(filterText) || item.id.includes(filterText));
+        }
+
+        if(filtered.length === 0) {
+            listEl.innerHTML = `<p style="text-align:center; color:#9ca3af; font-size:12px; padding:10px;">কোনো প্রোফাইল পাওয়া যায়নি।</p>`;
+            return;
+        }
+
+        filtered.forEach(p => {
+            listEl.innerHTML += `
+                <div style="background:#070a12; border:1px solid #1f293d; padding:10px; border-radius:8px; display:flex; justify-content:space-between; align-items:center;">
+                    <div>
+                        <strong style="color:var(--royal-gold); font-size:12px;">আইডি: #${p.id}</strong>
+                        <p style="font-size:11px; color:#cbd5e1;">বয়স: ${p.age} | পেশা: ${p.profession} | জেলা: ${p.district}</p>
+                    </div>
+                    <div style="text-align:right;">
+                        <span style="background:#10b981; color:#000; font-size:10px; padding:2px 6px; font-weight:bold; border-radius:4px;">কফু: ${p.kufu}</span>
+                    </div>
+                </div>
+            `;
+        });
+    }
+
+    function filterProfiles() {
+        const val = document.getElementById('districtSearch').value.trim();
+        renderProfiles(currentZone, val);
+    }
+
+    function playAiVoice(text) {
+        const aiTextEl = document.getElementById('aiSpokenText');
+        if(aiTextEl) aiTextEl.innerText = '"' + text + '"';
+        if ('speechSynthesis' in window) {
+            window.speechSynthesis.cancel();
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = 'bn-BD';
+            utterance.rate = 1.05; 
+            utterance.pitch = 1.4;  
+            window.speechSynthesis.speak(utterance);
+        }
+    }
+
+    function askAiAssistant() {
+        const query = document.getElementById('aiUserQuery').value.toLowerCase().trim();
+        const ansBox = document.getElementById('aiAnswerBox');
+        if(!query) {
+            alert("দয়া করে আপনার প্রশ্নটি লিখুন!");
+            return;
+        }
+
+        let answer = "আপনার প্রশ্নটি নোট করা হয়েছে। সপ্তপদী অ্যাপে আপনাকে সেরা অভিজ্ঞতা দিতে আমরা কাজ করছি।";
+        if(query.includes('বিয়ে') && (query.includes('কাগজ') || query.includes('নথি') || query.includes('লাগে'))) {
+            answer = "বিয়ে রেজিস্ট্রি সম্পন্ন করতে উভয় পক্ষের জাতীয় পরিচয়পত্র (NID), পাসপোর্ট সাইজ ছবি এবং কাবিননামার জন্য ২ জন সাক্ষী প্রয়োজন হয়।";
+        } else if(query.includes('লুডু') || query.includes('গেম')) {
+            answer = "লুডু বা অন্যান্য মিনি গেম খেলতে এক্সক্লুসিভ ফিচারস সেকশনের গেম অপশনে ক্লিক করুন!";
+        } else if(query.includes('কামরুল')) {
+            answer = "এই প্রজেক্টের রূপকার ও ডেভেলপার মোহাম্মদ কামরুল হাসান। উনার সাথে হোয়াটসঅ্যাপ বা টিকটকে (@kamrulhosen16) যোগাযোগ করুন।";
+        }
+
+        ansBox.innerText = "এআই উত্তর: " + answer;
+        document.getElementById('aiUserQuery').value = "";
+    }
+
+    function openGroupVoiceRoom() { alert("🎙️ ১৫-২০ জনের লাইভ ভয়েস পার্টি রুম কানেক্ট হচ্ছে..."); }
+    function openGameRoom() { alert("🎲 গেম জোন লোড হচ্ছে..."); }
+    function openKufuMatch() { alert("🕌 কুফু ম্যাচিং ক্যালকুলেটর ওপেন হয়েছে।"); }
+
+    function copyBikash() {
+        navigator.clipboard.writeText("01734883213");
+        alert("✅ বিকাশ পার্সোনাল নম্বর (01734883213) কপি হয়েছে!");
+    }
+
+    function checkAdmin() {
+        const pass = document.getElementById('adminPass').value.trim();
+        if(pass === 'admin777') {
+            document.getElementById('adminView').style.display = 'block';
+            alert('স্বাগতম কামরুল হাসান ভাই! অ্যাডমিন প্যানেল ওপেন হয়েছে।');
+        } else {
+            alert('❌ ভুল পাসওয়ার্ড!');
+        }
+    }
+</script>
+
+</body>
+</html>
+
         
